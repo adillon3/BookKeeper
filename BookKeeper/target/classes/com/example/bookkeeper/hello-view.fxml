@@ -3,17 +3,27 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox alignment="CENTER" prefHeight="452.0" prefWidth="841.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Text>
    <TextField alignment="TOP_LEFT" promptText="Character Name" />
    <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Character Description" />
    <TextField promptText="Character's Age" />
+   <ChoiceBox prefWidth="150.0" />
    <TextField promptText="Character's Gender" />
+   <ChoiceBox prefWidth="150.0" />
    <TextField promptText="Character's Sexuality" />
+   <ChoiceBox prefWidth="150.0" />
    <TextField promptText="Character's Race/Species" />
+   <ChoiceBox prefWidth="150.0" />
    <TextField promptText="Character's Race/Skin Color" />
 
     <Label fx:id="welcomeText" />
