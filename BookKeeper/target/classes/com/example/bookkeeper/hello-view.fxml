@@ -17,7 +17,7 @@
    <TextField alignment="TOP_LEFT" promptText="Character Name" />
    <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Character Description" />
    <TextField promptText="Character's Age" />
-   <ChoiceBox prefWidth="150.0" />
+   <ChoiceBox fx:id="genderChoiceBox" prefWidth="150.0" />
    <TextField promptText="Character's Gender" />
    <ChoiceBox prefWidth="150.0" />
    <TextField promptText="Character's Sexuality" />
