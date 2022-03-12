@@ -11,10 +11,13 @@ import javafx.scene.control.TextField;
 
 public class HelloController {
 
-    ObservableList<String> genderList = FXCollections.observableArrayList("Select Gender", "Male", "Female", "Non-binary", "Gender Fluid");
+    ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender", "Male", "Female", "Non-binary", "Gender Fluid");
 
-    //ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Choose", "Heterosexual", "Homosexual", "Bisexual", "Pansexual", "Asexual");
+    ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality", "Heterosexual", "Homosexual", "Bisexual", "Pansexual", "Asexual");
 
+    ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species", "Human", "Elf", "Dwarf", "Halfling");
+
+    ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color", "White", "Black", "Native American", "Indian", "Chinese", "Filipino", "Japanese", "Korean", "Native Hawaiian", "Guamanian", "Chamorro", "Samoan");
 
 
 
@@ -57,8 +60,17 @@ public class HelloController {
     @FXML
     private void initialize()
     {
-        genderChoiceBox.setValue("Select Gender");
+        genderChoiceBox.setValue("Select Character's Gender");
         genderChoiceBox.setItems(genderList);
+
+        sexualityChoiceBox.setValue("Select Character's Sexuality");
+        sexualityChoiceBox.setItems(sexualitiesList);
+
+        raceSpeciesChoiceBox.setValue("Select Character's Species");
+        raceSpeciesChoiceBox.setItems(raceSpeciesList);
+
+        raceSkinColorChoiceBox.setValue("Select Character's Skin Color");
+        raceSkinColorChoiceBox.setItems(raceSkinColorList);
     }
 
 

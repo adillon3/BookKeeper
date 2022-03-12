@@ -14,17 +14,17 @@
          <Font size="18.0" />
       </font>
    </Text>
-   <TextField alignment="TOP_LEFT" promptText="Character Name" />
-   <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Character Description" />
-   <TextField promptText="Character's Age" />
+   <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
+   <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" promptText="Character Description" />
+   <TextField fx:id="ageField" promptText="Character's Age" />
    <ChoiceBox fx:id="genderChoiceBox" prefWidth="150.0" />
-   <TextField promptText="Character's Gender" />
-   <ChoiceBox prefWidth="150.0" />
-   <TextField promptText="Character's Sexuality" />
-   <ChoiceBox prefWidth="150.0" />
-   <TextField promptText="Character's Race/Species" />
-   <ChoiceBox prefWidth="150.0" />
-   <TextField promptText="Character's Race/Skin Color" />
+   <TextField fx:id="genderField" promptText="Character's Gender" />
+   <ChoiceBox fx:id="sexualityChoiceBox" prefWidth="150.0" />
+   <TextField fx:id="sexualityField" promptText="Character's Sexuality" />
+   <ChoiceBox fx:id="raceSpeciesChoiceBox" prefWidth="150.0" />
+   <TextField fx:id="raceSpeciesField" promptText="Character's Race/Species" />
+   <ChoiceBox fx:id="raceSkinColorChoiceBox" prefWidth="150.0" />
+   <TextField fx:id="raceSkinColorField" promptText="Character's Race/Skin Color" />
 
     <Label fx:id="welcomeText" />
     <Button onAction="#onHelloButtonClick" text="Save to Database" />
