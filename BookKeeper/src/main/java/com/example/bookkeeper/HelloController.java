@@ -11,16 +11,35 @@ import javafx.scene.control.TextField;
 
 public class HelloController {
 
-    ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender", "Male", "Female", "Non-binary", "Gender Fluid");
-
-    ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality", "Heterosexual", "Homosexual", "Bisexual", "Pansexual", "Asexual");
-
-    ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species", "Human", "Elf", "Dwarf", "Halfling");
-
-    ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color", "White", "Black", "Native American", "Indian", "Chinese", "Filipino", "Japanese", "Korean", "Native Hawaiian", "Guamanian", "Chamorro", "Samoan");
-
-
-
+    ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
+                                                                               "Male",
+                                                                               "Female",
+                                                                               "Non-binary",
+                                                                               "Gender Fluid");
+    ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality",
+                                                                                    "Heterosexual",
+                                                                                    "Homosexual",
+                                                                                    "Bisexual",
+                                                                                    "Pansexual",
+                                                                                    "Asexual");
+    ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species",
+                                                                                    "Human",
+                                                                                    "Elf",
+                                                                                    "Dwarf",
+                                                                                    "Halfling");
+    ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color",
+                                                                                     "White",
+                                                                                     "Black",
+                                                                                     "Native American",
+                                                                                     "Indian",
+                                                                                     "Chinese",
+                                                                                     "Filipino",
+                                                                                     "Japanese",
+                                                                                     "Korean",
+                                                                                     "Native Hawaiian",
+                                                                                     "Guamanian",
+                                                                                     "Chamorro",
+                                                                                     "Samoan");
 
     @FXML
     private Label welcomeText;
@@ -54,7 +73,6 @@ public class HelloController {
     private ChoiceBox raceSkinColorChoiceBox;
     @FXML
     private TextField raceSkinColorField;
-
 
 
     @FXML
