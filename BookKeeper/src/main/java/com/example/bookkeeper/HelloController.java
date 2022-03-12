@@ -3,6 +3,8 @@ package com.example.bookkeeper;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -10,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-
+    
     ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
                                                                                "Male",
                                                                                "Female",
@@ -84,18 +86,43 @@ public class HelloController {
     {
         genderChoiceBox.setValue("Select Character's Gender");
         genderChoiceBox.setItems(genderList);
+        genderChoiceBox.setOnAction(this::getGender);
 
         sexualityChoiceBox.setValue("Select Character's Sexuality");
         sexualityChoiceBox.setItems(sexualitiesList);
+        sexualityChoiceBox.setOnAction(this::getSexuality);
 
         raceSpeciesChoiceBox.setValue("Select Character's Species");
         raceSpeciesChoiceBox.setItems(raceSpeciesList);
+        raceSpeciesChoiceBox.setOnAction(this::getRaceSpecies);
 
         raceSkinColorChoiceBox.setValue("Select Character's Skin Color");
         raceSkinColorChoiceBox.setItems(raceSkinColorList);
+        raceSkinColorChoiceBox.setOnAction(this::getRaceSkinColor);
     }
 
 
+
+    private void getGender(Event event)
+    {
+        Object newGender = genderChoiceBox.getValue();
+        System.out.println(newGender);
+    }
+    private void getSexuality(Event event)
+    {
+        Object newSexuality = sexualityChoiceBox.getValue();
+        System.out.println(newSexuality);
+    }
+    private void getRaceSpecies(Event event)
+    {
+        Object newSpecies = raceSpeciesChoiceBox.getValue();
+        System.out.println(newSpecies);
+    }
+    private void getRaceSkinColor(Event event)
+    {
+        Object newSkinColor = raceSkinColorChoiceBox.getValue();
+        System.out.println(newSkinColor);
+    }
 
     @FXML
     protected void onHelloButtonClick() {
