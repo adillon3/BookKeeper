@@ -88,6 +88,9 @@ public class HelloController {
         genderChoiceBox.setItems(genderList);
         genderChoiceBox.setOnAction(this::getGender);
 
+        //removing text box if it doesn't need to be added
+        genderField.setVisible(false);
+
         sexualityChoiceBox.setValue("Select Character's Sexuality");
         sexualityChoiceBox.setItems(sexualitiesList);
         sexualityChoiceBox.setOnAction(this::getSexuality);
@@ -107,9 +110,16 @@ public class HelloController {
     {
         Object newGender = genderChoiceBox.getValue();
 
+        //showing text box if new item needs to be added
         if(newGender == "Other, Please Specify")
         {
+            genderField.setVisible(true);
             System.out.println("Show the text box");
+        }
+        else
+        {
+            //removing text box if it doesn't need to be added
+            genderField.setVisible(false);
         }
 
         System.out.println(newGender);
@@ -132,6 +142,7 @@ public class HelloController {
         if(newSpecies == "Other, Please Specify")
         {
             System.out.println("Show the text box");
+
         }
 
         System.out.println(newSpecies);
