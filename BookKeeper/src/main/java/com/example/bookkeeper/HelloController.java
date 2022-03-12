@@ -12,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-    
+
     ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
                                                                                "Male",
                                                                                "Female",
@@ -106,21 +106,45 @@ public class HelloController {
     private void getGender(Event event)
     {
         Object newGender = genderChoiceBox.getValue();
+
+        if(newGender == "Other, Please Specify")
+        {
+            System.out.println("Show the text box");
+        }
+
         System.out.println(newGender);
     }
     private void getSexuality(Event event)
     {
         Object newSexuality = sexualityChoiceBox.getValue();
+
+        if(newSexuality == "Other, Please Specify")
+        {
+            System.out.println("Show the text box");
+        }
+
         System.out.println(newSexuality);
     }
     private void getRaceSpecies(Event event)
     {
         Object newSpecies = raceSpeciesChoiceBox.getValue();
+
+        if(newSpecies == "Other, Please Specify")
+        {
+            System.out.println("Show the text box");
+        }
+
         System.out.println(newSpecies);
     }
     private void getRaceSkinColor(Event event)
     {
         Object newSkinColor = raceSkinColorChoiceBox.getValue();
+
+        if(newSkinColor == "Other, Please Specify")
+        {
+            System.out.println("Show the text box");
+        }
+
         System.out.println(newSkinColor);
     }
 
