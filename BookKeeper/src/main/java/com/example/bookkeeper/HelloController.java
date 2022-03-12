@@ -88,8 +88,7 @@ public class HelloController {
         genderChoiceBox.setItems(genderList);
         genderChoiceBox.setOnAction(this::getGender);
 
-        //removing text box if it doesn't need to be added
-        genderField.setVisible(false);
+
 
         sexualityChoiceBox.setValue("Select Character's Sexuality");
         sexualityChoiceBox.setItems(sexualitiesList);
@@ -102,6 +101,13 @@ public class HelloController {
         raceSkinColorChoiceBox.setValue("Select Character's Skin Color");
         raceSkinColorChoiceBox.setItems(raceSkinColorList);
         raceSkinColorChoiceBox.setOnAction(this::getRaceSkinColor);
+
+
+        //setting all text fields for choice boxes to be invisbile
+        genderField.setVisible(false);
+        sexualityField.setVisible(false);
+        raceSpeciesField.setVisible(false);
+        raceSkinColorField.setVisible(false);
     }
 
 
@@ -114,49 +120,61 @@ public class HelloController {
         if(newGender == "Other, Please Specify")
         {
             genderField.setVisible(true);
-            System.out.println("Show the text box");
         }
         else
         {
             //removing text box if it doesn't need to be added
             genderField.setVisible(false);
+            genderField.clear();
         }
-
-        System.out.println(newGender);
     }
     private void getSexuality(Event event)
     {
         Object newSexuality = sexualityChoiceBox.getValue();
 
+        //showing text box if new item needs to be added
         if(newSexuality == "Other, Please Specify")
         {
-            System.out.println("Show the text box");
+            sexualityField.setVisible(true);
         }
-
-        System.out.println(newSexuality);
+        else
+        {
+            //removing text box if it doesn't need to be added
+            sexualityField.setVisible(false);
+            sexualityField.clear();
+        }
     }
     private void getRaceSpecies(Event event)
     {
         Object newSpecies = raceSpeciesChoiceBox.getValue();
 
+        //showing text box if new item needs to be added
         if(newSpecies == "Other, Please Specify")
         {
-            System.out.println("Show the text box");
-
+            raceSpeciesField.setVisible(true);
         }
-
-        System.out.println(newSpecies);
+        else
+        {
+            //removing text box if it doesn't need to be added
+            raceSpeciesField.setVisible(false);
+            raceSpeciesField.clear();
+        }
     }
     private void getRaceSkinColor(Event event)
     {
         Object newSkinColor = raceSkinColorChoiceBox.getValue();
 
+        //showing text box if new item needs to be added
         if(newSkinColor == "Other, Please Specify")
         {
-            System.out.println("Show the text box");
+            raceSkinColorField.setVisible(true);
         }
-
-        System.out.println(newSkinColor);
+        else
+        {
+            //removing text box if it doesn't need to be added
+            raceSkinColorField.setVisible(false);
+            raceSkinColorField.clear();
+        }
     }
 
     @FXML
