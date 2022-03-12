@@ -15,18 +15,21 @@ public class HelloController {
                                                                                "Male",
                                                                                "Female",
                                                                                "Non-binary",
-                                                                               "Gender Fluid");
+                                                                               "Gender Fluid",
+                                                                               "Other, Please Specify");
     ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality",
                                                                                     "Heterosexual",
                                                                                     "Homosexual",
                                                                                     "Bisexual",
                                                                                     "Pansexual",
-                                                                                    "Asexual");
+                                                                                    "Asexual",
+                                                                                    "Other, Please Specify");
     ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species",
                                                                                     "Human",
                                                                                     "Elf",
                                                                                     "Dwarf",
-                                                                                    "Halfling");
+                                                                                    "Halfling",
+                                                                                    "Other, Please Specify");
     ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color",
                                                                                      "White",
                                                                                      "Black",
@@ -39,7 +42,8 @@ public class HelloController {
                                                                                      "Native Hawaiian",
                                                                                      "Guamanian",
                                                                                      "Chamorro",
-                                                                                     "Samoan");
+                                                                                     "Samoan",
+                                                                                     "Other, Please Specify");
 
     @FXML
     private Label welcomeText;
