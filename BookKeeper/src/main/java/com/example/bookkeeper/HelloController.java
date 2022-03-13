@@ -46,6 +46,32 @@ public class HelloController {
                                                                                      "Chamorro",
                                                                                      "Samoan",
                                                                                      "Other, Please Specify");
+    ObservableList<String> hairColorList = FXCollections.observableArrayList("Select Character's Hair Color",
+                                                                                 "Redhead/Ginger",
+                                                                                 "Blonde",
+                                                                                 "Brunette",
+                                                                                 "Black",
+                                                                                 "White",
+                                                                                 "Grey",
+                                                                                 "Pink",
+                                                                                 "Red",
+                                                                                 "Orange",
+                                                                                 "Yellow",
+                                                                                 "Blue",
+                                                                                 "Green",
+                                                                                 "Purple",
+                                                                                 "Other, Please Specify");
+    ObservableList<String> eyeColorList = FXCollections.observableArrayList("Select Character's Eye Color",
+                                                                                "Amber",
+                                                                                "Blue",
+                                                                                "Brown",
+                                                                                "Grey",
+                                                                                "Green",
+                                                                                "Red",
+                                                                                "Black",
+                                                                                "Purple,",
+                                                                                "Other, Please Specify");
+
 
     @FXML
     private Label welcomeText;
@@ -80,6 +106,16 @@ public class HelloController {
     @FXML
     private TextField raceSkinColorField;
 
+    @FXML
+    private ChoiceBox hairColorChoiceBox;
+    @FXML
+    private TextField hairColorField;
+
+    @FXML
+    private ChoiceBox eyeColorChoiceBox;
+    @FXML
+    private TextField eyeColorField;
+
 
     @FXML
     private void initialize()
@@ -100,11 +136,21 @@ public class HelloController {
         raceSkinColorChoiceBox.setItems(raceSkinColorList);
         raceSkinColorChoiceBox.setOnAction(this::getRaceSkinColor);
 
+        hairColorChoiceBox.setValue("Select Character's Hair Color");
+        hairColorChoiceBox.setItems(hairColorList);
+        hairColorChoiceBox.setOnAction(this::getHairColor);
+
+        eyeColorChoiceBox.setValue("Select Character's Eye Color");
+        eyeColorChoiceBox.setItems(eyeColorList);
+        eyeColorChoiceBox.setOnAction(this::getEyeColor);
+
         //setting all text fields for choice boxes to be invisbile
         genderField.setVisible(false);
         sexualityField.setVisible(false);
         raceSpeciesField.setVisible(false);
         raceSkinColorField.setVisible(false);
+        hairColorField.setVisible(false);
+        eyeColorField.setVisible(false);
     }
 
 
@@ -171,6 +217,40 @@ public class HelloController {
             //removing text box if it doesn't need to be added
             raceSkinColorField.setVisible(false);
             raceSkinColorField.clear();
+        }
+    }
+
+    private void getHairColor(Event event)
+    {
+        Object newHairColor = hairColorChoiceBox.getValue();
+
+        //showing text box if new item needs to be added
+        if(newHairColor == "Other, Please Specify")
+        {
+            hairColorField.setVisible(true);
+        }
+        else
+        {
+            //removing text box if it doesn't need to be added
+            hairColorField.setVisible(false);
+            hairColorField.clear();
+        }
+    }
+
+    private void getEyeColor(Event event)
+    {
+        Object newEyeColor = eyeColorChoiceBox.getValue();
+
+        //showing text box if new item needs to be added
+        if(newEyeColor == "Other, Please Specify")
+        {
+            eyeColorField.setVisible(true);
+        }
+        else
+        {
+            //removing text box if it doesn't need to be added
+            eyeColorField.setVisible(false);
+            eyeColorField.clear();
         }
     }
 

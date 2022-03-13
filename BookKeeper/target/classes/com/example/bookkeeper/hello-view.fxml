@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<ScrollPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
+<ScrollPane prefHeight="780.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
    <content>
-      <VBox alignment="CENTER" prefHeight="452.0" prefWidth="841.0" spacing="20.0">
+      <VBox alignment="CENTER" prefHeight="663.0" prefWidth="905.0" spacing="20.0">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
@@ -25,9 +24,13 @@
          <ChoiceBox fx:id="sexualityChoiceBox" prefHeight="25.0" prefWidth="400.0" />
          <TextField fx:id="sexualityField" promptText="Character's Sexuality" />
          <ChoiceBox fx:id="raceSpeciesChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-         <TextField fx:id="raceSpeciesField" promptText="Character's Race/Species" />
+         <TextField fx:id="raceSpeciesField" prefHeight="188.0" prefWidth="802.0" promptText="Character's Race/Species" />
          <ChoiceBox fx:id="raceSkinColorChoiceBox" prefHeight="25.0" prefWidth="400.0" />
          <TextField fx:id="raceSkinColorField" promptText="Character's Race/Skin Color" />
+         <ChoiceBox fx:id="hairColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
+         <TextField fx:id="hairColorField" promptText="Character's Hair Color" />
+         <ChoiceBox fx:id="eyeColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
+         <TextField fx:id="eyeColorField" promptText="Character's Eye Color" />
       
           <Label fx:id="welcomeText" />
           <Button onAction="#onHelloButtonClick" text="Save to Database" />
