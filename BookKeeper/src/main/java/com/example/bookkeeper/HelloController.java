@@ -88,8 +88,6 @@ public class HelloController {
         genderChoiceBox.setItems(genderList);
         genderChoiceBox.setOnAction(this::getGender);
 
-
-
         sexualityChoiceBox.setValue("Select Character's Sexuality");
         sexualityChoiceBox.setItems(sexualitiesList);
         sexualityChoiceBox.setOnAction(this::getSexuality);
@@ -101,7 +99,6 @@ public class HelloController {
         raceSkinColorChoiceBox.setValue("Select Character's Skin Color");
         raceSkinColorChoiceBox.setItems(raceSkinColorList);
         raceSkinColorChoiceBox.setOnAction(this::getRaceSkinColor);
-
 
         //setting all text fields for choice boxes to be invisbile
         genderField.setVisible(false);

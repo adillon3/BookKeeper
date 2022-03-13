@@ -5,27 +5,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="452.0" prefWidth="841.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </Text>
-   <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
-   <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" promptText="Character Description" />
-   <TextField fx:id="ageField" promptText="Character's Age" />
-   <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-   <TextField fx:id="genderField" promptText="Character's Gender" />
-   <ChoiceBox fx:id="sexualityChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-   <TextField fx:id="sexualityField" promptText="Character's Sexuality" />
-   <ChoiceBox fx:id="raceSpeciesChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-   <TextField fx:id="raceSpeciesField" promptText="Character's Race/Species" />
-   <ChoiceBox fx:id="raceSkinColorChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-   <TextField fx:id="raceSkinColorField" promptText="Character's Race/Skin Color" />
 
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Save to Database" />
-</VBox>
+<ScrollPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
+   <content>
+      <VBox alignment="CENTER" prefHeight="452.0" prefWidth="841.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Text>
+         <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
+         <TextArea fx:id="descriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
+         <TextField fx:id="ageField" promptText="Character's Age" />
+         <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="genderField" promptText="Character's Gender" />
+         <ChoiceBox fx:id="sexualityChoiceBox" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="sexualityField" promptText="Character's Sexuality" />
+         <ChoiceBox fx:id="raceSpeciesChoiceBox" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="raceSpeciesField" promptText="Character's Race/Species" />
+         <ChoiceBox fx:id="raceSkinColorChoiceBox" prefHeight="25.0" prefWidth="400.0" />
+         <TextField fx:id="raceSkinColorField" promptText="Character's Race/Skin Color" />
+      
+          <Label fx:id="welcomeText" />
+          <Button onAction="#onHelloButtonClick" text="Save to Database" />
+      </VBox>
+   </content>
+</ScrollPane>
