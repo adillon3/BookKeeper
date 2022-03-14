@@ -217,7 +217,6 @@ public class HelloController
             raceSkinColorField.clear();
         }
     }
-
     private void getHairColor(Event event)
     {
         Object newHairColor = hairColorChoiceBox.getValue();
@@ -234,7 +233,6 @@ public class HelloController
             hairColorField.clear();
         }
     }
-
     private void getEyeColor(Event event)
     {
         Object newEyeColor = eyeColorChoiceBox.getValue();
