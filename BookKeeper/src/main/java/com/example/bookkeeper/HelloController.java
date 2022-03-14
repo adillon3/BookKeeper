@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class HelloController {
 
@@ -67,6 +64,7 @@ public class HelloController {
                                                                                 "Brown",
                                                                                 "Grey",
                                                                                 "Green",
+                                                                                "Hazel",
                                                                                 "Red",
                                                                                 "Black",
                                                                                 "Purple,",
@@ -116,6 +114,8 @@ public class HelloController {
     @FXML
     private TextField eyeColorField;
 
+//    @FXML
+//    private Button saveButton;
 
     @FXML
     private void initialize()
@@ -152,8 +152,6 @@ public class HelloController {
         hairColorField.setVisible(false);
         eyeColorField.setVisible(false);
     }
-
-
 
     private void getGender(Event event)
     {
@@ -254,8 +252,43 @@ public class HelloController {
         }
     }
 
+    //Saving Data to Database
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onHelloButtonClick()
+    {
+        String newName = nameField.getText();
+        String newDescription = descriptionArea.getText();
+        String newAge = ageField.getText();
+
+
+//        Object newGender = genderChoiceBox.getValue();
+//        Object newSexuality = sexualityChoiceBox.getValue();
+//        Object newSpecies = raceSpeciesChoiceBox.getValue();
+//        Object newSkinColor = raceSkinColorChoiceBox.getValue();
+//        Object newHairColor = hairColorChoiceBox.getValue();
+        String newEyeColor = String.valueOf(eyeColorChoiceBox.getValue());
+        if(newEyeColor == "Other, Please Specify")
+        {
+            newEyeColor = eyeColorField.getText();
+        }
+        else if (newEyeColor == "Select Character's Eye Color")
+        {
+            newEyeColor = "";
+        }
+
+
         welcomeText.setText("Will save to Data Base");
+
+        System.out.println(newName);
+        System.out.println(newDescription);
+        System.out.println(newAge);
+//        System.out.println(newName);
+//        System.out.println(newName);
+//        System.out.println(newName);
+//        System.out.println(newName);
+//        System.out.println(newName);
+        System.out.println(newEyeColor);
+
+
     }
 }
