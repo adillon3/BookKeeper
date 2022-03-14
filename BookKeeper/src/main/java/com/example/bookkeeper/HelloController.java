@@ -8,8 +8,8 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class HelloController {
-
+public class HelloController
+{
     ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
                                                                                "Male",
                                                                                "Female",
@@ -261,11 +261,56 @@ public class HelloController {
         String newAge = ageField.getText();
 
 
-//        Object newGender = genderChoiceBox.getValue();
-//        Object newSexuality = sexualityChoiceBox.getValue();
-//        Object newSpecies = raceSpeciesChoiceBox.getValue();
-//        Object newSkinColor = raceSkinColorChoiceBox.getValue();
-//        Object newHairColor = hairColorChoiceBox.getValue();
+        String newGender = String.valueOf(genderChoiceBox.getValue());
+        if(newGender == "Other, Please Specify")
+        {
+            newGender = raceSkinColorField.getText();
+        }
+        else if (newGender == "Select Character's Gender")
+        {
+            newGender = "";
+        }
+
+        String newSexuality = String.valueOf(sexualityChoiceBox.getValue());
+        if(newSexuality == "Other, Please Specify")
+        {
+            newSexuality = raceSkinColorField.getText();
+        }
+        else if (newSexuality == "Select Character's Sexuality")
+        {
+            newSexuality = "";
+        }
+
+        String newSpecies = String.valueOf(raceSpeciesChoiceBox.getValue());
+        if(newSpecies == "Other, Please Specify")
+        {
+            newSpecies = raceSkinColorField.getText();
+        }
+        else if (newSpecies == "Select Character's Species")
+        {
+            newSpecies = "";
+        }
+
+        String newSkinColor = String.valueOf(raceSkinColorChoiceBox.getValue());
+        if(newSkinColor == "Other, Please Specify")
+        {
+            newSkinColor = raceSkinColorField.getText();
+        }
+        else if (newSkinColor == "Select Character's Skin Color")
+        {
+            newSkinColor = "";
+        }
+
+        String newHairColor = String.valueOf(hairColorChoiceBox.getValue());
+        if(newHairColor == "Other, Please Specify")
+        {
+            newHairColor = hairColorField.getText();
+        }
+        else if (newHairColor == "Select Character's Hair Color")
+        {
+            newHairColor = "";
+        }
+
         String newEyeColor = String.valueOf(eyeColorChoiceBox.getValue());
         if(newEyeColor == "Other, Please Specify")
         {
@@ -282,11 +327,11 @@ public class HelloController {
         System.out.println(newName);
         System.out.println(newDescription);
         System.out.println(newAge);
-//        System.out.println(newName);
-//        System.out.println(newName);
-//        System.out.println(newName);
-//        System.out.println(newName);
-//        System.out.println(newName);
+        System.out.println(newGender);
+        System.out.println(newSexuality);
+        System.out.println(newSpecies);
+        System.out.println(newSkinColor);
+        System.out.println(newHairColor);
         System.out.println(newEyeColor);
 
 
