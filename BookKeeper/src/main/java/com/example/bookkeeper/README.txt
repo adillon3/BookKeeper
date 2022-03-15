@@ -9,7 +9,7 @@ ______             _    _   __
                                        |_|
 =========================================================
 
-BookKeeper is a program that allows novel writers and dungeon masters to keep track off the world's and stories they
+BookKeeper is a program that allows novel writers and dungeon masters to keep track of the world's and stories they
 create.
 
 =========================================================
@@ -26,3 +26,6 @@ Bugs and unimplemented features
 - When users "save" the info to the database, the data also persists in the UI.  In future versions this page will
 disappear and return users to different page (a viewing page, rather than an edit page).  Users can "add" multiple
 characters by pressing the "save" button multiple times.  Users can edit the page in between adding characters.
+- Screen always opens very small, make it full screen.
+- Character name doesn’t currently need to be specified, in the future, it will as the name will be the primary key for
+the database’s
