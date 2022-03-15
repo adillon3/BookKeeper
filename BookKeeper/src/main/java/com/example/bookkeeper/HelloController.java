@@ -67,7 +67,7 @@ public class HelloController
                                                                                 "Hazel",
                                                                                 "Red",
                                                                                 "Black",
-                                                                                "Purple,",
+                                                                                "Purple",
                                                                                 "Other, Please Specify");
 
 
@@ -262,7 +262,7 @@ public class HelloController
         String newGender = String.valueOf(genderChoiceBox.getValue());
         if(newGender == "Other, Please Specify")
         {
-            newGender = raceSkinColorField.getText();
+            newGender = genderField.getText();
         }
         else if (newGender == "Select Character's Gender")
         {
@@ -272,7 +272,7 @@ public class HelloController
         String newSexuality = String.valueOf(sexualityChoiceBox.getValue());
         if(newSexuality == "Other, Please Specify")
         {
-            newSexuality = raceSkinColorField.getText();
+            newSexuality = sexualityField.getText();
         }
         else if (newSexuality == "Select Character's Sexuality")
         {
@@ -282,7 +282,7 @@ public class HelloController
         String newSpecies = String.valueOf(raceSpeciesChoiceBox.getValue());
         if(newSpecies == "Other, Please Specify")
         {
-            newSpecies = raceSkinColorField.getText();
+            newSpecies = raceSpeciesField.getText();
         }
         else if (newSpecies == "Select Character's Species")
         {

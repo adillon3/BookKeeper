@@ -15,7 +15,7 @@ create.
 =========================================================
 3-14 NOTES
 =========================================================
-User's can input the data for one of their characters using the UI.  Certain fields have two options for input methods.
+Users can input the data for one of their characters using the UI.  Certain fields have two options for input methods.
 For example, hair color by default is chosen from a list of options.  If the user is not satisfied with any of these
 options, they can select "Other, Please Specify".  This will bring up a text entry box for them to enter a new hair
 color.  If they go back and select another option, the text box will disappear and be cleared.  This is the case for
@@ -27,5 +27,7 @@ Bugs and unimplemented features
 disappear and return users to different page (a viewing page, rather than an edit page).  Users can "add" multiple
 characters by pressing the "save" button multiple times.  Users can edit the page in between adding characters.
 - Screen always opens very small, make it full screen.
-- Character name doesn’t currently need to be specified, in the future, it will as the name will be the primary key for
+- Scroll bar moves rather slowly.
+- Age is not required to be an integer value, allowing characters to have "Unknown" or ranges, if the author hasn't decided yet.
+- Character name doesn't currently need to be specified, in the future, it will as the name will be the primary key for
 the database’s
