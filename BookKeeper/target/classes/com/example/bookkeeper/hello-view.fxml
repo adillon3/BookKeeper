@@ -7,7 +7,7 @@
 
 <TabPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
    <tabs>
-      <Tab text="Characters">
+      <Tab closable="false" text="Characters">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -43,7 +43,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab text="Events">
+      <Tab closable="false" text="Events">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -68,7 +68,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab text="Locations">
+      <Tab closable="false" text="Locations">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
