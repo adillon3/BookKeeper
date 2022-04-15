@@ -17,7 +17,7 @@
                       </padding>
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
                         <font>
-                           <Font size="18.0" />
+                           <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
                      <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
@@ -53,7 +53,7 @@
                      </padding>
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Creation">
                         <font>
-                           <Font size="18.0" />
+                           <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
                      <TextField fx:id="eventNameField" alignment="TOP_LEFT" promptText="Event Name" />
@@ -78,7 +78,7 @@
                      </padding>
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location Creation">
                         <font>
-                           <Font size="18.0" />
+                           <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
                      <TextField fx:id="locationNameField" alignment="TOP_LEFT" promptText="Location Name" />
