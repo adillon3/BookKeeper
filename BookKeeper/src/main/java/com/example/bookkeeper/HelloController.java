@@ -69,12 +69,34 @@ public class HelloController
                                                                                 "Black",
                                                                                 "Purple",
                                                                                 "Other, Please Specify");
+    ObservableList<String> locationTypeList = FXCollections.observableArrayList("Select Location Type",
+                                                                                "Room",
+                                                                                "Building",
+                                                                                "Park",
+                                                                                "Street",
+                                                                                "Neighborhood",
+                                                                                "Village",
+                                                                                "Town",
+                                                                                "City",
+                                                                                "County",
+                                                                                "State",
+                                                                                "Province",
+                                                                                "Territory",
+                                                                                "Country",
+                                                                                "Island",
+                                                                                "Continent",
+                                                                                "Moon",
+                                                                                "Planet",
+                                                                                "Solar System",
+                                                                                "Galaxy",
+                                                                                "Universe",
+                                                                                "Other, Please Specify");
 
 
     @FXML
     private Label welcomeText;
 
-    //Character Creation data
+    //CHARACTER CREATION DATA
     @FXML
     private TextField nameField;
 
@@ -114,12 +136,39 @@ public class HelloController
     @FXML
     private TextField eyeColorField;
 
+    //EVENT CREATION DATA
+    @FXML
+    private TextField eventNameField;
+
+    @FXML
+    private TextArea eventDescriptionArea;
+
+    @FXML
+    private TextField eventStartDate;
+
+    @FXML
+    private TextField eventEndDate;
+
+
+//    //LOCATION CREATION DATA
+    @FXML
+    private TextField locationNameField;
+
+    @FXML
+    private TextArea locationDescriptionArea;
+
+    @FXML
+    private ChoiceBox locationTypeChoiceBox;
+    @FXML
+    private TextField locationTypeField;
+
 //    @FXML
 //    private Button saveButton;
 
     @FXML
     private void initialize()
     {
+        //CHARACTER
         genderChoiceBox.setValue("Select Character's Gender");
         genderChoiceBox.setItems(genderList);
         genderChoiceBox.setOnAction(this::getGender);
@@ -144,13 +193,27 @@ public class HelloController
         eyeColorChoiceBox.setItems(eyeColorList);
         eyeColorChoiceBox.setOnAction(this::getEyeColor);
 
+
+        //EVENT
+
+        //LOCATION
+        locationTypeChoiceBox.setValue("Select Location Type");
+        locationTypeChoiceBox.setItems(locationTypeList);
+        locationTypeChoiceBox.setOnAction(this::getLocationType);
+
         //setting all text fields for choice boxes to be invisbile
+        //CHARACTER
         genderField.setVisible(false);
         sexualityField.setVisible(false);
         raceSpeciesField.setVisible(false);
         raceSkinColorField.setVisible(false);
         hairColorField.setVisible(false);
         eyeColorField.setVisible(false);
+
+        //EVENT
+
+        //LOCATION
+        locationTypeField.setVisible(false);
     }
 
     private void getGender(Event event)
@@ -247,6 +310,24 @@ public class HelloController
             //removing text box if it doesn't need to be added
             eyeColorField.setVisible(false);
             eyeColorField.clear();
+        }
+    }
+
+    //LOCATION
+    private void getLocationType(Event event)
+    {
+        Object newLocationType = locationTypeChoiceBox.getValue();
+
+        //showing text box if new item needs to be added
+        if(newLocationType == "Other, Please Specify")
+        {
+            locationTypeField.setVisible(true);
+        }
+        else
+        {
+            //removing text box if it doesn't need to be added
+            locationTypeField.setVisible(false);
+            locationTypeField.clear();
         }
     }
 
