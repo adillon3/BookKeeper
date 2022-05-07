@@ -11,6 +11,17 @@ ______             _    _   __
 
 BookKeeper is a program that allows novel writers and dungeon masters to keep track of the world's and stories they
 create.
+=========================================================
+4-25 NOTES
+=========================================================
+Users can choose what they'd like to input: Characters, Events, and Locations.  Looking up saved
+characters/events/locations are not currently implemented.
+Suggestions from the first check in were taken into account and most were added/fixed.  One notable exception is the
+suggestion to require age to be an integer.  This is left as a string to allow for authors to say things such as "about
+20" or "middle-aged" or "as old as time" or any nonspecific value.  This iis so that if the author hasn't fully decided
+on an exact number yet, they can up what they know or leave it vague on purpose.
+
+
 
 =========================================================
 3-14 NOTES
