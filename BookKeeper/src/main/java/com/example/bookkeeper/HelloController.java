@@ -415,4 +415,14 @@ public class HelloController
 
 
     }
+
+    @FXML
+    protected void onCharacterSearchButtonClick()
+    {
+
+    }
+
+
+
+
 }

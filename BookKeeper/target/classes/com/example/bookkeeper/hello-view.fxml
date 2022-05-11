@@ -7,6 +7,29 @@
 
 <TabPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
    <tabs>
+      <Tab closable="false" text="Character Search">
+         <content>
+            <ScrollPane prefHeight="910.0" prefWidth="907.0">
+               <content>
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Search">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Text>
+                     <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Search Character Name" />
+
+
+                     <Label fx:id="welcomeText" />
+                     <Button onAction="#onCharacterSearchButtonClick" text="Search Character" />
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </content>
+      </Tab>
       <Tab closable="false" text="Character Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
@@ -38,42 +61,6 @@
             
                       <Label fx:id="welcomeText" />
                       <Button onAction="#onHelloButtonClick" text="Save to Database" />
-                  </VBox>
-               </content>
-            </ScrollPane>
-         </content>
-      </Tab>
-      <Tab closable="false" text="Character Search">
-         <content>
-            <ScrollPane prefHeight="910.0" prefWidth="907.0">
-               <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Search">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Text>
-                     <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
-                     <TextArea fx:id="descriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
-                     <TextField fx:id="ageField" promptText="Character's Age" />
-                     <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-                     <TextField fx:id="genderField" promptText="Character's Gender" />
-                     <ChoiceBox fx:id="sexualityChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-                     <TextField fx:id="sexualityField" promptText="Character's Sexuality" />
-                     <ChoiceBox fx:id="raceSpeciesChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-                     <TextField fx:id="raceSpeciesField" prefHeight="188.0" prefWidth="802.0" promptText="Character's Race/Species" />
-                     <ChoiceBox fx:id="raceSkinColorChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-                     <TextField fx:id="raceSkinColorField" promptText="Character's Race/Skin Color" />
-                     <ChoiceBox fx:id="hairColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
-                     <TextField fx:id="hairColorField" promptText="Character's Hair Color" />
-                     <ChoiceBox fx:id="eyeColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
-                     <TextField fx:id="eyeColorField" promptText="Character's Eye Color" />
-
-                     <Label fx:id="welcomeText" />
-                     <Button onAction="#onHelloButtonClick" text="Save to Database" />
                   </VBox>
                </content>
             </ScrollPane>
