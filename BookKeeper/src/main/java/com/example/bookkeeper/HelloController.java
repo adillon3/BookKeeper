@@ -203,15 +203,14 @@ public class HelloController
         eyeColorChoiceBox.setItems(eyeColorList);
         eyeColorChoiceBox.setOnAction(this::getEyeColor);
 
-
-        //EVENT
+        //EVENT -N/A
 
         //LOCATION
         locationTypeChoiceBox.setValue("Select Location Type");
         locationTypeChoiceBox.setItems(locationTypeList);
         locationTypeChoiceBox.setOnAction(this::getLocationType);
 
-        //setting all text fields for choice boxes to be invisbile
+        //setting all text fields for choice boxes to be invisible
         //CHARACTER
         genderField.setVisible(false);
         sexualityField.setVisible(false);
@@ -219,9 +218,7 @@ public class HelloController
         raceSkinColorField.setVisible(false);
         hairColorField.setVisible(false);
         eyeColorField.setVisible(false);
-
-        //EVENT
-
+        //EVENT -N/A
         //LOCATION
         locationTypeField.setVisible(false);
     }
@@ -349,7 +346,6 @@ public class HelloController
         String newDescription = descriptionArea.getText();
         String newAge = ageField.getText();
 
-
         String newGender = String.valueOf(genderChoiceBox.getValue());
         if(newGender == "Other, Please Specify")
         {
@@ -410,7 +406,6 @@ public class HelloController
             newEyeColor = "";
         }
 
-
         welcomeText.setText("Will save to Data Base");
 
         System.out.println(newName);
@@ -422,28 +417,32 @@ public class HelloController
         System.out.println(newSkinColor);
         System.out.println(newHairColor);
         System.out.println(newEyeColor);
-
-
     }
 
     @FXML
     protected void onCharacterSearchButtonClick()
     {
+        welcomeText.setText("Searching Database for Character");
 
+        //first check all the properties to see if any new types need to be added
+        //then add the character itself
     }
 
     @FXML
     protected void onEventSearchButtonClick()
     {
+        welcomeText.setText("Searching Database for Event");
 
+        //first check all the properties to see if any new types need to be added
+        //then add the event itself
     }
 
     @FXML
     protected void onLocationSearchButtonClick()
     {
+        welcomeText.setText("Searching Database for Location");
 
+        //first check all the properties to see if any new types need to be added
+        //then add the location itself
     }
-
-
-
 }
