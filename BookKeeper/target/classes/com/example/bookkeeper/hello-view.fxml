@@ -20,11 +20,11 @@
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
-                     <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Search Character Name" />
+                     <TextField fx:id="characterSearchField" alignment="TOP_LEFT" promptText="Search Character Name" />
 
 
                      <Label fx:id="welcomeText" />
-                     <Button onAction="#onCharacterSearchButtonClick" text="Search Character" />
+                     <Button onAction="#onCharacterSearchButtonClick" text="Searching for Character" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -66,7 +66,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Event Creation">
+      <Tab closable="false" text="Event Search">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -74,24 +74,22 @@
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Creation">
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Search">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
-                     <TextField fx:id="eventNameField" alignment="TOP_LEFT" promptText="Event Name" />
-                     <TextArea fx:id="eventDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Event Description" />
-                     <TextField fx:id="eventStartDate" promptText="Event Start Date" />
-                     <TextField fx:id="eventEndDate" promptText="Event End Date" />
+                     <TextField fx:id="eventSearchField" alignment="TOP_LEFT" promptText="Search Event" />
+
 
                      <Label fx:id="welcomeText" />
-                     <Button onAction="#onHelloButtonClick" text="Save to Database" />
+                     <Button onAction="#onEventSearchButtonClick" text="Searching for Event" />
                   </VBox>
                </content>
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Event Search">
+      <Tab closable="false" text="Event Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -116,7 +114,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Location Creation">
+      <Tab closable="false" text="Location Search">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -129,19 +127,16 @@
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
-                     <TextField fx:id="locationNameField" alignment="TOP_LEFT" promptText="Location Name" />
-                     <TextArea fx:id="locationDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Location Description" />
-                     <ChoiceBox fx:id="locationTypeChoiceBox" prefHeight="25.0" prefWidth="400.0" />
-                     <TextField fx:id="locationTypeField" promptText="Location's Type" />
+                     <TextField fx:id="locationSearchField" alignment="TOP_LEFT" promptText="Search Location" />
 
                      <Label fx:id="welcomeText" />
-                     <Button onAction="#onHelloButtonClick" text="Save to Database" />
+                     <Button onAction="#onLocationSearchButtonClick" text="Searching For Location" />
                   </VBox>
                </content>
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Location Search">
+      <Tab closable="false" text="Location Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>

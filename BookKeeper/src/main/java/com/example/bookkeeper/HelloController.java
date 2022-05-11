@@ -162,6 +162,16 @@ public class HelloController
     @FXML
     private TextField locationTypeField;
 
+
+    @FXML
+    private TextField characterSearchField;
+    @FXML
+    private TextField eventSearchField;
+    @FXML
+    private TextField locationSearchField;
+
+
+
 //    @FXML
 //    private Button saveButton;
 
@@ -422,6 +432,17 @@ public class HelloController
 
     }
 
+    @FXML
+    protected void onEventSearchButtonClick()
+    {
+
+    }
+
+    @FXML
+    protected void onLocationSearchButtonClick()
+    {
+
+    }
 
 
 
