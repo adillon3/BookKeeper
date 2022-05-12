@@ -355,7 +355,7 @@ public class HelloController
         }
     }
 
-    //Saving Data to Database
+    //CREATE BUTTON FUNCTIONS
     @FXML
     protected void onCreateCharacterButtonClick()
     {
@@ -482,24 +482,11 @@ public class HelloController
         System.out.println();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //SEARCH BUTTON FUNCTIONS
     @FXML
     protected void onCharacterSearchButtonClick()
     {
-        characterSearchField.setText("Searching Database for Character");
+        characterSearchText.setText("Searching Database for Character");
 
         //first check all the properties to see if any new types need to be added
         //then add the character itself
@@ -508,7 +495,7 @@ public class HelloController
     @FXML
     protected void onEventSearchButtonClick()
     {
-        eventSearchField.setText("Searching Database for Event");
+        eventSearchText.setText("Searching Database for Event");
 
         //first check all the properties to see if any new types need to be added
         //then add the event itself
@@ -517,7 +504,7 @@ public class HelloController
     @FXML
     protected void onLocationSearchButtonClick()
     {
-        locationSearchField.setText("Searching Database for Location");
+        locationSearchText.setText("Searching Database for Location");
 
         //first check all the properties to see if any new types need to be added
         //then add the location itself
