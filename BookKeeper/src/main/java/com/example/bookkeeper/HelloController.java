@@ -364,6 +364,9 @@ public class HelloController
         if(newGender == "Other, Please Specify")
         {
             newGender = genderField.getText();
+
+            //Adding new gender to the list
+            genderList.add((genderList.size() - 1), newGender);
         }
         else if (newGender == "Select Character's Gender")
         {
@@ -374,6 +377,9 @@ public class HelloController
         if(newSexuality == "Other, Please Specify")
         {
             newSexuality = sexualityField.getText();
+
+            //Adding new sexuality to the list
+            sexualitiesList.add((sexualitiesList.size() - 1), newSexuality);
         }
         else if (newSexuality == "Select Character's Sexuality")
         {
@@ -384,6 +390,9 @@ public class HelloController
         if(newSpecies == "Other, Please Specify")
         {
             newSpecies = raceSpeciesField.getText();
+
+            //Adding new species to the list
+            raceSpeciesList.add((raceSpeciesList.size() - 1), newSpecies);
         }
         else if (newSpecies == "Select Character's Species")
         {
@@ -394,6 +403,9 @@ public class HelloController
         if(newSkinColor == "Other, Please Specify")
         {
             newSkinColor = raceSkinColorField.getText();
+
+            //Adding new skin color to the list
+            raceSkinColorList.add((raceSkinColorList.size() - 1), newSkinColor);
         }
         else if (newSkinColor == "Select Character's Skin Color")
         {
@@ -404,6 +416,9 @@ public class HelloController
         if(newHairColor == "Other, Please Specify")
         {
             newHairColor = hairColorField.getText();
+
+            //Adding new skin color to the list
+            hairColorList.add((hairColorList.size() - 1), newHairColor);
         }
         else if (newHairColor == "Select Character's Hair Color")
         {
@@ -414,6 +429,9 @@ public class HelloController
         if(newEyeColor == "Other, Please Specify")
         {
             newEyeColor = eyeColorField.getText();
+
+            //Adding new skin color to the list
+            eyeColorList.add((eyeColorList.size() - 1), newEyeColor);
         }
         else if (newEyeColor == "Select Character's Eye Color")
         {
@@ -491,17 +509,14 @@ public class HelloController
         if(newLocationType == "Other, Please Specify")
         {
             newLocationType = locationTypeField.getText();
+
             //Adding new location type to the list
-
             locationTypeList.add((locationTypeList.size() - 1), newLocationType);
-
         }
         else if (newLocationType == "Select Location Type")
         {
             newLocationType = "";
         }
-
-
 
         locationCreationText.setText("Saving " + newName +" save location to Data Base");
 
