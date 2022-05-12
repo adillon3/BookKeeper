@@ -170,16 +170,16 @@ public class HelloController
 //    //LOCATION CREATION DATA
     @FXML
     private TextField locationNameField;
-
     @FXML
     private TextArea locationDescriptionArea;
-
     @FXML
     private ChoiceBox locationTypeChoiceBox;
     @FXML
     private TextField locationTypeField;
 
 
+
+    //SEARCH VARIABLES
     @FXML
     private TextField characterSearchField;
     @FXML
@@ -187,10 +187,6 @@ public class HelloController
     @FXML
     private TextField locationSearchField;
 
-
-
-//    @FXML
-//    private Button saveButton;
 
     @FXML
     private void initialize()
@@ -464,7 +460,16 @@ public class HelloController
         String newLocationType = String.valueOf(locationTypeChoiceBox.getValue());
         if(newLocationType == "Other, Please Specify")
         {
-            newLocationType = genderField.getText();
+            newLocationType = locationTypeField.getText();
+            //Adding new location type to the list
+
+
+
+
+//updating the list
+//            locationTypeChoiceBox.setValue("Select Location Type");
+//            locationTypeChoiceBox.setItems(locationTypeList);
+//            locationTypeChoiceBox.setOnAction(this::getLocationType);
         }
         else if (newLocationType == "Select Location Type")
         {
@@ -473,13 +478,21 @@ public class HelloController
 
 
 
-        locationCreationText.setText("Will save location to Data Base");
+        locationCreationText.setText("Saving " + newName +" save location to Data Base");
 
         System.out.println("--ADDING NEW LOCATION");
         System.out.println(newName);
         System.out.println(newDescription);
         System.out.println(newLocationType);
         System.out.println();
+
+
+        //SETTING ALL OPTIONS BACK TO CLEAR
+        locationNameField.clear();
+        locationDescriptionArea.clear();
+        locationTypeChoiceBox.setValue("Select Location Type");
+        locationTypeField.setVisible(false);
+        locationTypeField.clear();
     }
 
     //SEARCH BUTTON FUNCTIONS
@@ -491,7 +504,6 @@ public class HelloController
         //first check all the properties to see if any new types need to be added
         //then add the character itself
     }
-
     @FXML
     protected void onEventSearchButtonClick()
     {
@@ -500,7 +512,6 @@ public class HelloController
         //first check all the properties to see if any new types need to be added
         //then add the event itself
     }
-
     @FXML
     protected void onLocationSearchButtonClick()
     {
