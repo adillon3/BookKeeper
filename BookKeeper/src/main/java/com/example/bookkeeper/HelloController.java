@@ -438,9 +438,24 @@ public class HelloController
         characterNameField.clear();
         characterDescriptionArea.clear();
         characterAgeField.clear();
-        locationTypeChoiceBox.setValue("Select Location Type");
-        locationTypeField.setVisible(false);
-        locationTypeField.clear();
+        genderChoiceBox.setValue("Select Character's Gender");
+        genderField.setVisible(false);
+        genderField.clear();
+        sexualityChoiceBox.setValue("Select Character's Sexuality");
+        sexualityField.setVisible(false);
+        sexualityField.clear();
+        raceSpeciesChoiceBox.setValue("Select Character's Species");
+        raceSpeciesField.setVisible(false);
+        raceSpeciesField.clear();
+        raceSkinColorChoiceBox.setValue("Select Character's Skin Color");
+        raceSkinColorField.setVisible(false);
+        raceSkinColorField.clear();
+        hairColorChoiceBox.setValue("Select Character's Hair Color");
+        hairColorField.setVisible(false);
+        hairColorField.clear();
+        eyeColorChoiceBox.setValue("Select Character's Eye Color");
+        eyeColorField.setVisible(false);
+        eyeColorField.clear();
     }
     @FXML
     protected void onCreateEventButtonClick()
