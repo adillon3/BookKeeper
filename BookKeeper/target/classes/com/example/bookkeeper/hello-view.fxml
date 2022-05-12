@@ -43,8 +43,8 @@
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Text>
-                     <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Character Name" />
-                     <TextArea fx:id="descriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
+                     <TextField fx:id="characterNameField" alignment="TOP_LEFT" promptText="Character Name" />
+                     <TextArea fx:id ="characterDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
                      <TextField fx:id="ageField" promptText="Character's Age" />
                      <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="400.0" />
                      <TextField fx:id="genderField" promptText="Character's Gender" />

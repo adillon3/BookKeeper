@@ -115,10 +115,10 @@ public class HelloController
 
     //CHARACTER CREATION DATA
     @FXML
-    private TextField nameField;
+    private TextField characterNameField;
 
     @FXML
-    private TextArea descriptionArea;
+    private TextArea characterDescriptionArea;
 
     @FXML
     private TextField ageField;
@@ -355,8 +355,8 @@ public class HelloController
     @FXML
     protected void onCreateCharacterButtonClick()
     {
-        String newName = nameField.getText();
-        String newDescription = descriptionArea.getText();
+        String newName = characterNameField.getText();
+        String newDescription = characterDescriptionArea.getText();
         String newAge = ageField.getText();
 
         String newGender = String.valueOf(genderChoiceBox.getValue());
@@ -432,6 +432,20 @@ public class HelloController
         System.out.println(newHairColor);
         System.out.println(newEyeColor);
         System.out.println();
+
+
+
+        //SETTING ALL OPTIONS BACK TO CLEAR
+        locationNameField.clear();
+        locationDescriptionArea.clear();
+        locationTypeChoiceBox.setValue("Select Location Type");
+        locationTypeField.setVisible(false);
+        locationTypeField.clear();
+
+
+
+
+
     }
     @FXML
     protected void onCreateEventButtonClick()
@@ -450,6 +464,14 @@ public class HelloController
         System.out.println(newStart);
         System.out.println(newEnd);
         System.out.println();
+
+        //SETTING ALL OPTIONS BACK TO CLEAR
+        eventNameField.clear();
+        eventDescriptionArea.clear();
+        eventStartDateField.clear();
+        eventEndDateField.clear();
+
+
     }
     @FXML
     protected void onCreateLocationButtonClick()
