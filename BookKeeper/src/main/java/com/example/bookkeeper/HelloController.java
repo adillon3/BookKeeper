@@ -7,9 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
 
 public class HelloController
 {
+//    Connection connection = DriverManager.getConnection();
+
+
     ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
                                                                                "Male",
                                                                                "Female",
@@ -95,6 +100,18 @@ public class HelloController
 
     @FXML
     private Label welcomeText;
+    @FXML
+    private Label characterCreationText;
+    @FXML
+    private Label eventCreationText;
+    @FXML
+    private Label locationCreationText;
+    @FXML
+    private Label characterSearchText;
+    @FXML
+    private Label eventSearchText;
+    @FXML
+    private Label locationSearchText;
 
     //CHARACTER CREATION DATA
     @FXML
@@ -144,10 +161,10 @@ public class HelloController
     private TextArea eventDescriptionArea;
 
     @FXML
-    private TextField eventStartDate;
+    private TextField eventStartDateField;
 
     @FXML
-    private TextField eventEndDate;
+    private TextField eventEndDateField;
 
 
 //    //LOCATION CREATION DATA
@@ -340,7 +357,7 @@ public class HelloController
 
     //Saving Data to Database
     @FXML
-    protected void onHelloButtonClick()
+    protected void onCreateCharacterButtonClick()
     {
         String newName = nameField.getText();
         String newDescription = descriptionArea.getText();
@@ -406,8 +423,9 @@ public class HelloController
             newEyeColor = "";
         }
 
-        welcomeText.setText("Will save to Data Base");
+        characterCreationText.setText("Will save character to Data Base");
 
+        System.out.println("--ADDING NEW CHARACTER");
         System.out.println(newName);
         System.out.println(newDescription);
         System.out.println(newAge);
@@ -417,12 +435,71 @@ public class HelloController
         System.out.println(newSkinColor);
         System.out.println(newHairColor);
         System.out.println(newEyeColor);
+        System.out.println();
     }
+    @FXML
+    protected void onCreateEventButtonClick()
+    {
+        String newName = eventNameField.getText();
+        String newDescription = eventDescriptionArea.getText();
+        String newStart = eventStartDateField.getText();
+        String newEnd = eventEndDateField.getText();
+
+
+        eventCreationText.setText("Will save location to Data Base");
+
+        System.out.println("--ADDING NEW LOCATION");
+        System.out.println(newName);
+        System.out.println(newDescription);
+        System.out.println(newStart);
+        System.out.println(newEnd);
+        System.out.println();
+    }
+    @FXML
+    protected void onCreateLocationButtonClick()
+    {
+        String newName = locationNameField.getText();
+        String newDescription = locationDescriptionArea.getText();
+
+        String newLocationType = String.valueOf(locationTypeChoiceBox.getValue());
+        if(newLocationType == "Other, Please Specify")
+        {
+            newLocationType = genderField.getText();
+        }
+        else if (newLocationType == "Select Location Type")
+        {
+            newLocationType = "";
+        }
+
+
+
+        locationCreationText.setText("Will save location to Data Base");
+
+        System.out.println("--ADDING NEW LOCATION");
+        System.out.println(newName);
+        System.out.println(newDescription);
+        System.out.println(newLocationType);
+        System.out.println();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @FXML
     protected void onCharacterSearchButtonClick()
     {
-        welcomeText.setText("Searching Database for Character");
+        characterSearchField.setText("Searching Database for Character");
 
         //first check all the properties to see if any new types need to be added
         //then add the character itself
@@ -431,7 +508,7 @@ public class HelloController
     @FXML
     protected void onEventSearchButtonClick()
     {
-        welcomeText.setText("Searching Database for Event");
+        eventSearchField.setText("Searching Database for Event");
 
         //first check all the properties to see if any new types need to be added
         //then add the event itself
@@ -440,7 +517,7 @@ public class HelloController
     @FXML
     protected void onLocationSearchButtonClick()
     {
-        welcomeText.setText("Searching Database for Location");
+        locationSearchField.setText("Searching Database for Location");
 
         //first check all the properties to see if any new types need to be added
         //then add the location itself

@@ -23,7 +23,7 @@
                      <TextField fx:id="characterSearchField" alignment="TOP_LEFT" promptText="Search Character Name" />
 
 
-                     <Label fx:id="welcomeText" />
+                     <Label fx:id="characterSearchText" />
                      <Button onAction="#onCharacterSearchButtonClick" text="Searching for Character" />
                   </VBox>
                </content>
@@ -59,8 +59,8 @@
                      <ChoiceBox fx:id="eyeColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
                      <TextField fx:id="eyeColorField" promptText="Character's Eye Color" />
             
-                      <Label fx:id="welcomeText" />
-                      <Button onAction="#onHelloButtonClick" text="Save to Database" />
+                      <Label fx:id="characterCreationText" />
+                      <Button onAction="#onCreateCharacterButtonClick" text="Save to Database" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -82,7 +82,7 @@
                      <TextField fx:id="eventSearchField" alignment="TOP_LEFT" promptText="Search Event" />
 
 
-                     <Label fx:id="welcomeText" />
+                     <Label fx:id="eventSearchText" />
                      <Button onAction="#onEventSearchButtonClick" text="Searching for Event" />
                   </VBox>
                </content>
@@ -104,11 +104,11 @@
                      </Text>
                      <TextField fx:id="eventNameField" alignment="TOP_LEFT" promptText="Event Name" />
                      <TextArea fx:id="eventDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Event Description" />
-                     <TextField fx:id="eventStartDate" promptText="Event Start Date" />
-                     <TextField fx:id="eventEndDate" promptText="Event End Date" />
+                     <TextField fx:id="eventStartDateField" promptText="Event Start Date" />
+                     <TextField fx:id="eventEndDateField" promptText="Event End Date" />
 
-                     <Label fx:id="welcomeText" />
-                     <Button onAction="#onHelloButtonClick" text="Save to Database" />
+                     <Label fx:id="eventCreationText" />
+                     <Button onAction="#onCreateEventButtonClick" text="Save to Database" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -129,7 +129,7 @@
                      </Text>
                      <TextField fx:id="locationSearchField" alignment="TOP_LEFT" promptText="Search Location" />
 
-                     <Label fx:id="welcomeText" />
+                     <Label fx:id="locationSearchText" />
                      <Button onAction="#onLocationSearchButtonClick" text="Searching For Location" />
                   </VBox>
                </content>
@@ -154,8 +154,8 @@
                      <ChoiceBox fx:id="locationTypeChoiceBox" prefHeight="25.0" prefWidth="400.0" />
                      <TextField fx:id="locationTypeField" promptText="Location's Type" />
 
-                     <Label fx:id="welcomeText" />
-                     <Button onAction="#onHelloButtonClick" text="Save to Database" />
+                     <Label fx:id="locationCreationText" />
+                     <Button onAction="#onCreateLocationButtonClick" text="Save to Database" />
                   </VBox>
                </content>
             </ScrollPane>
