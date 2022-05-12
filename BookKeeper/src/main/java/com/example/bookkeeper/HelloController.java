@@ -121,7 +121,7 @@ public class HelloController
     private TextArea characterDescriptionArea;
 
     @FXML
-    private TextField ageField;
+    private TextField characterAgeField;
 
     @FXML
     private ChoiceBox genderChoiceBox;
@@ -351,13 +351,14 @@ public class HelloController
         }
     }
 
+
     //CREATE BUTTON FUNCTIONS
     @FXML
     protected void onCreateCharacterButtonClick()
     {
         String newName = characterNameField.getText();
         String newDescription = characterDescriptionArea.getText();
-        String newAge = ageField.getText();
+        String newAge = characterAgeField.getText();
 
         String newGender = String.valueOf(genderChoiceBox.getValue());
         if(newGender == "Other, Please Specify")
@@ -433,19 +434,13 @@ public class HelloController
         System.out.println(newEyeColor);
         System.out.println();
 
-
-
         //SETTING ALL OPTIONS BACK TO CLEAR
-        locationNameField.clear();
-        locationDescriptionArea.clear();
+        characterNameField.clear();
+        characterDescriptionArea.clear();
+        characterAgeField.clear();
         locationTypeChoiceBox.setValue("Select Location Type");
         locationTypeField.setVisible(false);
         locationTypeField.clear();
-
-
-
-
-
     }
     @FXML
     protected void onCreateEventButtonClick()
