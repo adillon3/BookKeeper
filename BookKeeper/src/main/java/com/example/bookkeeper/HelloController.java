@@ -480,8 +480,6 @@ public class HelloController
         eventDescriptionArea.clear();
         eventStartDateField.clear();
         eventEndDateField.clear();
-
-
     }
     @FXML
     protected void onCreateLocationButtonClick()
@@ -495,13 +493,8 @@ public class HelloController
             newLocationType = locationTypeField.getText();
             //Adding new location type to the list
 
+            locationTypeList.add((locationTypeList.size() - 1), newLocationType);
 
-
-
-//updating the list
-//            locationTypeChoiceBox.setValue("Select Location Type");
-//            locationTypeChoiceBox.setItems(locationTypeList);
-//            locationTypeChoiceBox.setOnAction(this::getLocationType);
         }
         else if (newLocationType == "Select Location Type")
         {
