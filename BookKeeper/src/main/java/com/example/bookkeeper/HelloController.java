@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 
+
 public class HelloController
 {
 //    Connection connection = DriverManager.getConnection();
@@ -96,6 +97,14 @@ public class HelloController
                                                                                 "Galaxy",
                                                                                 "Universe",
                                                                                 "Other, Please Specify");
+
+
+    ObservableList<bkCharacter> bkCharacterList;
+//    ObservableList<bkEvents> bkEventsList;
+    ObservableList<bkLocations> bkLocationList;
+
+
+
 
 
     @FXML
@@ -520,12 +529,14 @@ public class HelloController
 
         locationCreationText.setText("Saving " + newName +" save location to Data Base");
 
+        //Printing to Console
         System.out.println("--ADDING NEW LOCATION");
         System.out.println(newName);
         System.out.println(newDescription);
         System.out.println(newLocationType);
         System.out.println();
 
+        //Add to array
 
         //SETTING ALL OPTIONS BACK TO CLEAR
         locationNameField.clear();
