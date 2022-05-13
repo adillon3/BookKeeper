@@ -587,14 +587,9 @@ public class HelloController
         String searchCharacterName = characterSearchField.getText();
         characterSearchText.setText("Searching Database for " + searchCharacterName);
 
-
         int index = 0;
         while(index < bkCharacterList.size())
         {
-            System.out.println("HERE");
-
-            System.out.println(bkCharacterList.get(index).getCharacterName() + "HELLO");
-
             if(searchCharacterName.equalsIgnoreCase(bkCharacterList.get(index).getCharacterName()))
             {
                 characterSearchText.setText(searchCharacterName + " found!");
@@ -605,15 +600,33 @@ public class HelloController
 
         //CHARACTER NOT FOUND
         characterSearchText.setText(searchCharacterName + " not found!");
-
     }
     @FXML
     protected void onEventSearchButtonClick()
     {
-        eventSearchText.setText("Searching Database for Event");
+        if(bkEventList.size() == 0)
+        {
+            eventSearchText.setText("Event Database is Empty");
+            return;
+        }
+        //ELSE
 
-        //first check all the properties to see if any new types need to be added
-        //then add the event itself
+        String searchEventName = eventSearchField.getText();
+        eventSearchText.setText("Searching Database for " + searchEventName);
+
+        int index = 0;
+        while(index < bkEventList.size())
+        {
+            if(searchEventName.equalsIgnoreCase(bkEventList.get(index).getEventName()))
+            {
+                eventSearchText.setText(searchEventName + " found!");
+                return;
+            }
+            index++;
+        }
+
+        //CHARACTER NOT FOUND
+        characterSearchText.setText(searchEventName + " not found!");
     }
     @FXML
     protected void onLocationSearchButtonClick()
