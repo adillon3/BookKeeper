@@ -592,7 +592,10 @@ public class HelloController
         while(index < bkCharacterList.size())
         {
             System.out.println("HERE");
-            if(searchCharacterName == bkCharacterList.get(index).getCharacterName())
+
+            System.out.println(bkCharacterList.get(index).getCharacterName() + "HELLO");
+
+            if(searchCharacterName.equalsIgnoreCase(bkCharacterList.get(index).getCharacterName()))
             {
                 characterSearchText.setText(searchCharacterName + " found!");
                 return;
