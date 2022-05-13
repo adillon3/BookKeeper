@@ -466,8 +466,6 @@ public class HelloController
         bkCharacterList.add(newCharacter);
 
 
-
-
         System.out.println("--ADDING NEW CHARACTER");
         System.out.println(newCharacter.getCharacterName());
         System.out.println(newCharacter.getCharacterDescription());
@@ -579,10 +577,32 @@ public class HelloController
     @FXML
     protected void onCharacterSearchButtonClick()
     {
-        characterSearchText.setText("Searching Database for Character");
+        if(bkCharacterList.size() == 0)
+        {
+            characterSearchText.setText("Character Database is Empty");
+            return;
+        }
+        //ELSE
 
-        //first check all the properties to see if any new types need to be added
-        //then add the character itself
+        String searchCharacterName = characterSearchField.getText();
+        characterSearchText.setText("Searching Database for " + searchCharacterName);
+
+
+        int index = 0;
+        while(index < bkCharacterList.size())
+        {
+            System.out.println("HERE");
+            if(searchCharacterName == bkCharacterList.get(index).getCharacterName())
+            {
+                characterSearchText.setText(searchCharacterName + " found!");
+                return;
+            }
+            index++;
+        }
+
+        //CHARACTER NOT FOUND
+        characterSearchText.setText(searchCharacterName + " not found!");
+
     }
     @FXML
     protected void onEventSearchButtonClick()
