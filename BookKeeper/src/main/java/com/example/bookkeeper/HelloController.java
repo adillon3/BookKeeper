@@ -625,15 +625,34 @@ public class HelloController
             index++;
         }
 
-        //CHARACTER NOT FOUND
-        characterSearchText.setText(searchEventName + " not found!");
+        //EVENT NOT FOUND
+        eventSearchText.setText(searchEventName + " not found!");
     }
     @FXML
     protected void onLocationSearchButtonClick()
     {
-        locationSearchText.setText("Searching Database for Location");
+        if(bkLocationList.size() == 0)
+        {
+            locationSearchText.setText("Location Database is Empty");
+            return;
+        }
+        //ELSE
 
-        //first check all the properties to see if any new types need to be added
-        //then add the location itself
+        String searchLocationName = locationSearchField.getText();
+        locationSearchText.setText("Searching Database for " + searchLocationName);
+
+        int index = 0;
+        while(index < bkLocationList.size())
+        {
+            if(searchLocationName.equalsIgnoreCase(bkLocationList.get(index).getLocationName()))
+            {
+                locationSearchText.setText(searchLocationName + " found!");
+                return;
+            }
+            index++;
+        }
+
+        //CHARACTER NOT FOUND
+        locationSearchText.setText(searchLocationName + " not found!");
     }
 }
