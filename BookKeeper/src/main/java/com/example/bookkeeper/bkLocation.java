@@ -2,17 +2,17 @@ package com.example.bookkeeper;
 
 import java.io.Serializable;
 
-public class bkLocations implements Serializable {
+public class bkLocation  {
     private String locationName;
     private String locationDescription;
     private String locationType;
 
     //CONSTRUCTORS
-    public bkLocations(String newLocationName)
+    public bkLocation(String newLocationName)
     {
         this(newLocationName, "NULL", "NULL");
     }
-    public bkLocations(String newLocationName, String newLocationDescription, String newLocationType)
+    public bkLocation(String newLocationName, String newLocationDescription, String newLocationType)
     {
         setLocationName(newLocationName);
         setLocationDescription(newLocationDescription);

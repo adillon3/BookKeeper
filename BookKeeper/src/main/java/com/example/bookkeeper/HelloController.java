@@ -99,9 +99,9 @@ public class HelloController
                                                                                 "Other, Please Specify");
 
 
-    ObservableList<bkCharacter> bkCharacterList;
-//    ObservableList<bkEvents> bkEventsList;
-    ObservableList<bkLocations> bkLocationList;
+    ObservableList<bkCharacter> bkCharacterList = FXCollections.observableArrayList();
+    ObservableList<bkEvent> bkEventList = FXCollections.observableArrayList();
+    ObservableList<bkLocation> bkLocationList = FXCollections.observableArrayList();
 
 
 
@@ -447,18 +447,37 @@ public class HelloController
             newEyeColor = "";
         }
 
-        characterCreationText.setText("Will save character to Data Base");
+        characterCreationText.setText("Will save " + newName+ " to Data Base");
+
+
+
+        eventCreationText.setText("Will save " + newName + " to Data Base");
+
+        //Add to array
+        bkCharacter newCharacter = new bkCharacter(newName,
+                                                   newDescription,
+                                                   newAge,
+                                                   newGender,
+                                                   newSexuality,
+                                                   newSpecies,
+                                                   newSkinColor,
+                                                   newHairColor,
+                                                   newEyeColor);
+        bkCharacterList.add(newCharacter);
+
+
+
 
         System.out.println("--ADDING NEW CHARACTER");
-        System.out.println(newName);
-        System.out.println(newDescription);
-        System.out.println(newAge);
-        System.out.println(newGender);
-        System.out.println(newSexuality);
-        System.out.println(newSpecies);
-        System.out.println(newSkinColor);
-        System.out.println(newHairColor);
-        System.out.println(newEyeColor);
+        System.out.println(newCharacter.getCharacterName());
+        System.out.println(newCharacter.getCharacterDescription());
+        System.out.println(newCharacter.getCharacterAge());
+        System.out.println(newCharacter.getGender());
+        System.out.println(newCharacter.getSexuality());
+        System.out.println(newCharacter.getSpecies());
+        System.out.println(newCharacter.getSkinColor());
+        System.out.println(newCharacter.getHairColor());
+        System.out.println(newCharacter.getEyeColor());
         System.out.println();
 
         //SETTING ALL OPTIONS BACK TO CLEAR
@@ -493,13 +512,18 @@ public class HelloController
         String newEnd = eventEndDateField.getText();
 
 
-        eventCreationText.setText("Will save location to Data Base");
+        eventCreationText.setText("Will save " + newName + " to Data Base");
 
-        System.out.println("--ADDING NEW LOCATION");
-        System.out.println(newName);
-        System.out.println(newDescription);
-        System.out.println(newStart);
-        System.out.println(newEnd);
+        //Add to array
+        bkEvent newEvent = new bkEvent(newName, newDescription, newStart, newEnd);
+        bkEventList.add(newEvent);
+
+
+        System.out.println("--ADDING NEW EVENT");
+        System.out.println(newEvent.getEventName());
+        System.out.println(newEvent.getEventDescription());
+        System.out.println(newEvent.getEventStartDate());
+        System.out.println(newEvent.getEventEndDate());
         System.out.println();
 
         //SETTING ALL OPTIONS BACK TO CLEAR
@@ -524,19 +548,24 @@ public class HelloController
         }
         else if (newLocationType == "Select Location Type")
         {
-            newLocationType = "";
+            newLocationType = "NULL";
         }
 
         locationCreationText.setText("Saving " + newName +" save location to Data Base");
 
+        //Add to array
+        bkLocation newLocation = new bkLocation(newName, newDescription, newLocationType);
+        bkLocationList.add(newLocation);
+
+
         //Printing to Console
         System.out.println("--ADDING NEW LOCATION");
-        System.out.println(newName);
-        System.out.println(newDescription);
-        System.out.println(newLocationType);
+        System.out.println(newLocation.getLocationName());
+        System.out.println(newLocation.getLocationDescription());
+        System.out.println(newLocation.getLocationType());
         System.out.println();
 
-        //Add to array
+
 
         //SETTING ALL OPTIONS BACK TO CLEAR
         locationNameField.clear();

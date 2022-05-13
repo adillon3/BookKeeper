@@ -33,18 +33,19 @@ public class bkCharacter implements Serializable
                        String newCharacterAge,
                        String newGender,
                        String newSexuality,
-                       String newHairColor,
-                       String newEyeColor,
+                       String newSpecies,
                        String newSkinColor,
-                       String newSpecies)
+                       String newHairColor,
+                       String newEyeColor
+                       )
     {
         setCharacterName(newCharacterName);
         setCharacterDescription(newCharacterDescription);
         setCharacterAge(newCharacterAge);
         setGender(newGender);
         setSexuality(newSexuality);
-        setSkinColor(newSkinColor);
         setSpecies(newSpecies);
+        setSkinColor(newSkinColor);
         setHairColor(newHairColor);
         setEyeColor(newEyeColor);
     }

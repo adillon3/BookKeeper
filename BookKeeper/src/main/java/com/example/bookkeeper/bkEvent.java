@@ -2,7 +2,7 @@ package com.example.bookkeeper;
 
 import java.io.Serializable;
 
-public class bkEvents implements Serializable {
+public class bkEvent implements Serializable {
 
     private String eventName;
     private String eventDescription;
@@ -10,12 +10,12 @@ public class bkEvents implements Serializable {
     private String eventEndDate;
 
     //CONSTRUCTORS
-    public bkEvents(String newEventName)
+    public bkEvent(String newEventName)
     {
         this(newEventName, "NULL", "NULL", "NULL");
     }
 
-    public bkEvents(String newEventName, String newEventDescription, String newEventStartDate, String newEventEndDate)
+    public bkEvent(String newEventName, String newEventDescription, String newEventStartDate, String newEventEndDate)
     {
         setEventName(newEventName);
         setEventDescription(newEventDescription);
