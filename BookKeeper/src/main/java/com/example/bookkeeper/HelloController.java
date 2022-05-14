@@ -122,6 +122,13 @@ public class HelloController
     @FXML
     private Label locationSearchText;
 
+    @FXML
+    private Label characterFoundOutputText;
+    @FXML
+    private Label eventFoundOutputText;
+    @FXML
+    private Label locationFoundOutputText;
+
     //CHARACTER CREATION DATA
     @FXML
     private TextField characterNameField;
@@ -165,13 +172,10 @@ public class HelloController
     //EVENT CREATION DATA
     @FXML
     private TextField eventNameField;
-
     @FXML
     private TextArea eventDescriptionArea;
-
     @FXML
     private TextField eventStartDateField;
-
     @FXML
     private TextField eventEndDateField;
 
@@ -463,6 +467,7 @@ public class HelloController
         bkCharacterList.add(newCharacter);
 
 
+        //PRINTING TO CONSOLE
         System.out.println("--ADDING NEW CHARACTER");
         System.out.println(newCharacter.toString());
         System.out.println();
@@ -574,6 +579,7 @@ public class HelloController
             if(searchCharacterName.equalsIgnoreCase(bkCharacterList.get(index).getCharacterName()))
             {
                 characterSearchText.setText(searchCharacterName + " found!");
+                characterFoundOutputText.setText(bkCharacterList.get(index).toString());
                 return;
             }
             index++;
@@ -581,6 +587,7 @@ public class HelloController
 
         //CHARACTER NOT FOUND
         characterSearchText.setText(searchCharacterName + " not found!");
+        characterFoundOutputText.setText("");
     }
     @FXML
     protected void onEventSearchButtonClick()
