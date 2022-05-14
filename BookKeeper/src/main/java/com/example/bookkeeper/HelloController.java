@@ -1,12 +1,13 @@
 package com.example.bookkeeper;
 
-import javafx.beans.Observable;
+import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.WindowEvent;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 
@@ -190,6 +191,8 @@ public class HelloController
     private ChoiceBox locationTypeChoiceBox;
     @FXML
     private TextField locationTypeField;
+    @FXML
+    private Button saveDataBasesButton;
 
 
 
@@ -649,4 +652,13 @@ public class HelloController
         locationSearchText.setText(searchLocationName + " not found!");
         locationFoundOutputText.setText("");
     }
+
+
+    @FXML
+    protected void onSaveDataBasesButton()
+    {
+        //writing all databases to files
+        System.out.println("SAVING\n\n");
+    }
+
 }

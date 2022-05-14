@@ -59,8 +59,9 @@
                      <ChoiceBox fx:id="eyeColorChoiceBox" prefHeight="26.0" prefWidth="400.0" />
                      <TextField fx:id="eyeColorField" promptText="Character's Eye Color" />
             
-                      <Label fx:id="characterCreationText" />
-                      <Button onAction="#onCreateCharacterButtonClick" text="Save to Database" />
+                     <Label fx:id="characterCreationText" />
+                     <Button onAction="#onCreateCharacterButtonClick" text="Save to Database" />
+                     <Button onAction="#onSaveDataBasesButton" text="Save All Databases" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -109,6 +110,7 @@
 
                      <Label fx:id="eventCreationText" />
                      <Button onAction="#onCreateEventButtonClick" text="Save to Database" />
+                     <Button onAction="#onSaveDataBasesButton" text="Save All Databases" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -155,8 +157,12 @@
                      <ChoiceBox fx:id="locationTypeChoiceBox" prefHeight="25.0" prefWidth="400.0" />
                      <TextField fx:id="locationTypeField" promptText="Location's Type" />
 
+
+
+
                      <Label fx:id="locationCreationText" />
-                     <Button onAction="#onCreateLocationButtonClick" text="Save to Database" />
+                     <Button onAction="#onCreateLocationButtonClick" text="Save Location to Database" />
+                     <Button onAction="#onSaveDataBasesButton" text="Save All Databases" />
                   </VBox>
                </content>
             </ScrollPane>
