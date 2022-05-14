@@ -22,9 +22,8 @@
                      </Text>
                      <TextField fx:id="characterSearchField" alignment="TOP_LEFT" promptText="Search Character Name" />
 
-
-                     <Label fx:id="characterSearchText" />
                      <Button onAction="#onCharacterSearchButtonClick" text="Search for Character" />
+                     <Label fx:id="characterSearchText" />
                      <Label fx:id="characterFoundOutputText" />
                   </VBox>
                </content>
@@ -82,9 +81,9 @@
                      </Text>
                      <TextField fx:id="eventSearchField" alignment="TOP_LEFT" promptText="Search Event" />
 
-
-                     <Label fx:id="eventSearchText" />
                      <Button onAction="#onEventSearchButtonClick" text="Search for Event" />
+                     <Label fx:id="eventSearchText" />
+                     <Label fx:id="eventFoundOutputText" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -130,8 +129,9 @@
                      </Text>
                      <TextField fx:id="locationSearchField" alignment="TOP_LEFT" promptText="Search Location" />
 
-                     <Label fx:id="locationSearchText" />
                      <Button onAction="#onLocationSearchButtonClick" text="Search For Location" />
+                     <Label fx:id="locationSearchText" />
+                     <Label fx:id="locationFoundOutputText" />
                   </VBox>
                </content>
             </ScrollPane>

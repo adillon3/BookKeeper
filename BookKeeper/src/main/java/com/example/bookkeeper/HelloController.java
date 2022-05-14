@@ -537,7 +537,7 @@ public class HelloController
         }
         else if (newLocationType == "Select Location Type")
         {
-            newLocationType = "NULL";
+            newLocationType = "";
         }
 
         locationCreationText.setText("Saving " + newName +" to Data Base");
@@ -608,6 +608,7 @@ public class HelloController
             if(searchEventName.equalsIgnoreCase(bkEventList.get(index).getEventName()))
             {
                 eventSearchText.setText(searchEventName + " found!");
+                eventFoundOutputText.setText(bkEventList.get(index).toString());
                 return;
             }
             index++;
@@ -615,6 +616,7 @@ public class HelloController
 
         //EVENT NOT FOUND
         eventSearchText.setText(searchEventName + " not found!");
+        eventFoundOutputText.setText("");
     }
     @FXML
     protected void onLocationSearchButtonClick()
@@ -635,6 +637,7 @@ public class HelloController
             if(searchLocationName.equalsIgnoreCase(bkLocationList.get(index).getLocationName()))
             {
                 locationSearchText.setText(searchLocationName + " found!");
+                locationFoundOutputText.setText(bkLocationList.get(index).toString());
                 return;
             }
             index++;
@@ -642,5 +645,6 @@ public class HelloController
 
         //CHARACTER NOT FOUND
         locationSearchText.setText(searchLocationName + " not found!");
+        locationFoundOutputText.setText("");
     }
 }
