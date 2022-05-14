@@ -50,6 +50,7 @@ public class HelloController
                                                                                      "Samoan",
                                                                                      "Other, Please Specify");
     ObservableList<String> hairColorList = FXCollections.observableArrayList("Select Character's Hair Color",
+                                                                                 "Bald/No Hair",
                                                                                  "Redhead/Ginger",
                                                                                  "Blonde",
                                                                                  "Brunette",
@@ -99,9 +100,9 @@ public class HelloController
                                                                                 "Other, Please Specify");
 
 
-    ObservableList<bkCharacter> bkCharacterList = FXCollections.observableArrayList();
-    ObservableList<bkEvent> bkEventList = FXCollections.observableArrayList();
-    ObservableList<bkLocation> bkLocationList = FXCollections.observableArrayList();
+    ObservableList<BKCharacter> bkCharacterList = FXCollections.observableArrayList();
+    ObservableList<BKEvent> bkEventList = FXCollections.observableArrayList();
+    ObservableList<BKLocation> bkLocationList = FXCollections.observableArrayList();
 
 
 
@@ -455,7 +456,7 @@ public class HelloController
 
 
         //Add to array
-        bkCharacter newCharacter = new bkCharacter(newName,
+        BKCharacter newCharacter = new BKCharacter(newName,
                                                    newDescription,
                                                    newAge,
                                                    newGender,
@@ -507,7 +508,7 @@ public class HelloController
         eventCreationText.setText("Saving " + newName + " to Data Base");
 
         //Add to array
-        bkEvent newEvent = new bkEvent(newName, newDescription, newStart, newEnd);
+        BKEvent newEvent = new BKEvent(newName, newDescription, newStart, newEnd);
         bkEventList.add(newEvent);
 
 
@@ -543,7 +544,7 @@ public class HelloController
         locationCreationText.setText("Saving " + newName +" to Data Base");
 
         //Add to array
-        bkLocation newLocation = new bkLocation(newName, newDescription, newLocationType);
+        BKLocation newLocation = new BKLocation(newName, newDescription, newLocationType);
         bkLocationList.add(newLocation);
 
 

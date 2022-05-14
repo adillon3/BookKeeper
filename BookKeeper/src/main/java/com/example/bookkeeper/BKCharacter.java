@@ -2,7 +2,7 @@ package com.example.bookkeeper;
 
 import java.io.Serializable;
 
-public class bkCharacter implements Serializable
+public class BKCharacter implements Serializable
 {
     private String characterName;
     private String characterDescription;
@@ -16,7 +16,7 @@ public class bkCharacter implements Serializable
 
 
     //CONSTRUCTORS
-    public bkCharacter(String newCharacterName)
+    public BKCharacter(String newCharacterName)
     {
         this(newCharacterName,
                 "NULL",
@@ -28,7 +28,7 @@ public class bkCharacter implements Serializable
                 "NULL",
                 "NULL");
     }
-    public bkCharacter(String newCharacterName,
+    public BKCharacter(String newCharacterName,
                        String newCharacterDescription,
                        String newCharacterAge,
                        String newGender,

@@ -1,18 +1,16 @@
 package com.example.bookkeeper;
 
-import java.io.Serializable;
-
-public class bkLocation  {
+public class BKLocation  {
     private String locationName;
     private String locationDescription;
     private String locationType;
 
     //CONSTRUCTORS
-    public bkLocation(String newLocationName)
+    public BKLocation(String newLocationName)
     {
         this(newLocationName, "NULL", "NULL");
     }
-    public bkLocation(String newLocationName, String newLocationDescription, String newLocationType)
+    public BKLocation(String newLocationName, String newLocationDescription, String newLocationType)
     {
         setLocationName(newLocationName);
         setLocationDescription(newLocationDescription);
