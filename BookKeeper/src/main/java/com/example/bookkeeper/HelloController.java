@@ -8,6 +8,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.WindowEvent;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 
@@ -655,10 +661,25 @@ public class HelloController
 
 
     @FXML
-    protected void onSaveDataBasesButton()
-    {
+    protected void onSaveDataBasesButton() throws IOException {
         //writing all databases to files
         System.out.println("SAVING\n\n");
+        //writing all "smaller fields" to files
+        //Character attributes
+        writeObservableListToFile(genderList, "Genders.bin");
+        writeObservableListToFile(sexualitiesList, "Sexualities.bin");
+        writeObservableListToFile(raceSpeciesList, "Species.bin");
+        writeObservableListToFile(raceSkinColorList, "SkinColor.bin");
+        writeObservableListToFile(hairColorList, "HairColor.bin");
+        writeObservableListToFile(eyeColorList, "EyeColor.bin");
+        //Location attributes
+        writeObservableListToFile(locationTypeList, "LocationTypes.bin");
     }
 
+
+    public static void writeObservableListToFile(ObservableList<String> listToWrite, String fileName) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
+        out.writeObject(new ArrayList<String>(listToWrite));
+        out.close();
+    }
 }
