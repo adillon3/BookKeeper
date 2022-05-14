@@ -550,6 +550,7 @@ public class HelloController
         //Printing to Console
         System.out.println("--ADDING NEW LOCATION");
         System.out.println(newLocation.toString());
+        System.out.println();
 
         //SETTING ALL OPTIONS BACK TO CLEAR
         locationNameField.clear();
