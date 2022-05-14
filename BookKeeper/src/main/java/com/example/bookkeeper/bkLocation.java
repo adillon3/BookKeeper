@@ -38,4 +38,14 @@ public class bkLocation  {
     public void setLocationType(String locationType) {
         this.locationType = locationType;
     }
+
+    //OTHER METHODS
+    public String toString()
+    {
+        return  "Location Name: " + locationName + "\n" +
+                "Description  : " + locationDescription + "\n" +
+                "Location Type: " + locationType;
+    }
+
+
 }

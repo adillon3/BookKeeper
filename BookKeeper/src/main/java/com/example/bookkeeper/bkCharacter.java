@@ -81,6 +81,18 @@ public class bkCharacter implements Serializable
     public void setSexuality(String sexuality) {
         this.sexuality = sexuality;
     }
+    public String getSpecies() {
+        return species;
+    }
+    public void setSpecies(String speices) {
+        this.species = speices;
+    }
+    public String getSkinColor() {
+        return skinColor;
+    }
+    public void setSkinColor(String skinColor) {
+        this.skinColor = skinColor;
+    }
     public String getHairColor() {
         return hairColor;
     }
@@ -93,22 +105,21 @@ public class bkCharacter implements Serializable
     public void setEyeColor(String eyeColor) {
         this.eyeColor = eyeColor;
     }
-    public String getSkinColor() {
-        return skinColor;
-    }
-    public void setSkinColor(String skinColor) {
-        this.skinColor = skinColor;
-    }
-    public String getSpecies() {
-        return species;
-    }
-    public void setSpecies(String speices) {
-        this.species = speices;
-    }
-
 
 
     //OTHER METHODS
+    public String toString()
+    {
+        return  "Character Name: " + characterName + "\n" +
+                "Description   : " + characterDescription + "\n" +
+                "Character Age : " + characterAge + "\n" +
+                "Gender        : " + gender + "\n" +
+                "Sexuality:    : " + sexuality + "\n" +
+                "Species       : " + species + "\n" +
+                "Skin Color    : " + skinColor + "\n" +
+                "Hair Color    : " + hairColor + "\n" +
+                "Eye Color     : " + eyeColor+ "\n";
+    }
 
 
 

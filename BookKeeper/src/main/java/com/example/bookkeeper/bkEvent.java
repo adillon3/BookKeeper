@@ -51,4 +51,16 @@ public class bkEvent implements Serializable {
     public void setEventEndDate(String eventEndDate) {
         this.eventEndDate = eventEndDate;
     }
+
+
+
+    //OTHER METHODS
+    public String toString()
+    {
+        return  "Event Name  : " + eventName + "\n" +
+                "Description : " + eventDescription + "\n" +
+                "Start Date  : " + eventStartDate + "\n" +
+                "End Date    : " + eventEndDate + "\n";
+
+    }
 }
