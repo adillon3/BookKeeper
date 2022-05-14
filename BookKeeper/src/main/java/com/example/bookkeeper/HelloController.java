@@ -664,7 +664,8 @@ public class HelloController
     protected void onSaveDataBasesButton() throws IOException {
         //writing all databases to files
         System.out.println("SAVING\n\n");
-        //writing all "smaller fields" to files
+
+        //WRITING ATTRIBUTE LISTS TO FILES
         //Character attributes
         writeObservableListToFile(genderList, "Genders.bin");
         writeObservableListToFile(sexualitiesList, "Sexualities.bin");
@@ -674,10 +675,15 @@ public class HelloController
         writeObservableListToFile(eyeColorList, "EyeColor.bin");
         //Location attributes
         writeObservableListToFile(locationTypeList, "LocationTypes.bin");
+
+        //WRITING BK LISTS TO FILES
+        writeObservableListToFile(bkCharacterList, "BKCharacters.bin");
+        writeObservableListToFile(bkEventList, "BKEvents.bin");
+        writeObservableListToFile(bkLocationList, "BKLocations.bin");
     }
 
 
-    public static void writeObservableListToFile(ObservableList<String> listToWrite, String fileName) throws IOException {
+    public static void writeObservableListToFile(ObservableList listToWrite, String fileName) throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
         out.writeObject(new ArrayList<String>(listToWrite));
         out.close();
