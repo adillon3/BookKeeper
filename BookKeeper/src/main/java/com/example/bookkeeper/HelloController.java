@@ -9,11 +9,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.WindowEvent;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 //import java.sql.Connection;
 //import java.sql.DriverManager;
 
@@ -22,97 +23,105 @@ public class HelloController
 {
 //    Connection connection = DriverManager.getConnection();
 
+    ObservableList<String> genderList;
+    ObservableList<String> sexualitiesList;
+    ObservableList<String> raceSpeciesList;
+    ObservableList<String> raceSkinColorList;
+    ObservableList<String> hairColorList;
+    ObservableList<String> eyeColorList;
+    ObservableList<String> locationTypeList;
 
-    ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
-                                                                               "Male",
-                                                                               "Female",
-                                                                               "Non-binary",
-                                                                               "Gender Fluid",
-                                                                               "Other, Please Specify");
-    ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality",
-                                                                                    "Heterosexual",
-                                                                                    "Homosexual",
-                                                                                    "Bisexual",
-                                                                                    "Pansexual",
-                                                                                    "Asexual",
-                                                                                    "Other, Please Specify");
-    ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species",
-                                                                                    "Human",
-                                                                                    "Elf",
-                                                                                    "Dwarf",
-                                                                                    "Halfling",
-                                                                                    "Other, Please Specify");
-    ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color",
-                                                                                     "White",
-                                                                                     "Black",
-                                                                                     "Native American",
-                                                                                     "Indian",
-                                                                                     "Chinese",
-                                                                                     "Filipino",
-                                                                                     "Japanese",
-                                                                                     "Korean",
-                                                                                     "Native Hawaiian",
-                                                                                     "Guamanian",
-                                                                                     "Chamorro",
-                                                                                     "Samoan",
-                                                                                     "Other, Please Specify");
-    ObservableList<String> hairColorList = FXCollections.observableArrayList("Select Character's Hair Color",
-                                                                                 "Bald/No Hair",
-                                                                                 "Redhead/Ginger",
-                                                                                 "Blonde",
-                                                                                 "Brunette",
-                                                                                 "Black",
-                                                                                 "White",
-                                                                                 "Grey",
-                                                                                 "Pink",
-                                                                                 "Red",
-                                                                                 "Orange",
-                                                                                 "Yellow",
-                                                                                 "Blue",
-                                                                                 "Green",
-                                                                                 "Purple",
-                                                                                 "Other, Please Specify");
-    ObservableList<String> eyeColorList = FXCollections.observableArrayList("Select Character's Eye Color",
-                                                                                "Amber",
-                                                                                "Blue",
-                                                                                "Brown",
-                                                                                "Grey",
-                                                                                "Green",
-                                                                                "Hazel",
-                                                                                "Red",
-                                                                                "Black",
-                                                                                "Purple",
-                                                                                "Other, Please Specify");
-    ObservableList<String> locationTypeList = FXCollections.observableArrayList("Select Location Type",
-                                                                                "Room",
-                                                                                "Building",
-                                                                                "Park",
-                                                                                "Street",
-                                                                                "Neighborhood",
-                                                                                "Village",
-                                                                                "Town",
-                                                                                "City",
-                                                                                "County",
-                                                                                "State",
-                                                                                "Province",
-                                                                                "Territory",
-                                                                                "Country",
-                                                                                "Island",
-                                                                                "Continent",
-                                                                                "Moon",
-                                                                                "Planet",
-                                                                                "Solar System",
-                                                                                "Galaxy",
-                                                                                "Universe",
-                                                                                "Other, Please Specify");
+    ObservableList<BKCharacter> bkCharacterList;
+    ObservableList<BKEvent> bkEventList;
+    ObservableList<BKLocation> bkLocationList;
 
-
-    ObservableList<BKCharacter> bkCharacterList = FXCollections.observableArrayList();
-    ObservableList<BKEvent> bkEventList = FXCollections.observableArrayList();
-    ObservableList<BKLocation> bkLocationList = FXCollections.observableArrayList();
-
-
-
+    //REFERSHING DATA
+//    ObservableList<String> genderList = FXCollections.observableArrayList("Select Character's Gender",
+//                                                                               "Male",
+//                                                                               "Female",
+//                                                                               "Non-binary",
+//                                                                               "Gender Fluid",
+//                                                                               "Other, Please Specify");
+//    ObservableList<String> sexualitiesList = FXCollections.observableArrayList("Select Character's Sexuality",
+//                                                                                    "Heterosexual",
+//                                                                                    "Homosexual",
+//                                                                                    "Bisexual",
+//                                                                                    "Pansexual",
+//                                                                                    "Asexual",
+//                                                                                    "Other, Please Specify");
+//    ObservableList<String> raceSpeciesList = FXCollections.observableArrayList("Select Character's Species",
+//                                                                                    "Human",
+//                                                                                    "Elf",
+//                                                                                    "Dwarf",
+//                                                                                    "Halfling",
+//                                                                                    "Other, Please Specify");
+//    ObservableList<String> raceSkinColorList = FXCollections.observableArrayList("Select Character's Skin Color",
+//                                                                                     "White",
+//                                                                                     "Black",
+//                                                                                     "Native American",
+//                                                                                     "Indian",
+//                                                                                     "Chinese",
+//                                                                                     "Filipino",
+//                                                                                     "Japanese",
+//                                                                                     "Korean",
+//                                                                                     "Native Hawaiian",
+//                                                                                     "Guamanian",
+//                                                                                     "Chamorro",
+//                                                                                     "Samoan",
+//                                                                                     "Other, Please Specify");
+//    ObservableList<String> hairColorList = FXCollections.observableArrayList("Select Character's Hair Color",
+//                                                                                 "Bald/No Hair",
+//                                                                                 "Redhead/Ginger",
+//                                                                                 "Blonde",
+//                                                                                 "Brunette",
+//                                                                                 "Black",
+//                                                                                 "White",
+//                                                                                 "Grey",
+//                                                                                 "Pink",
+//                                                                                 "Red",
+//                                                                                 "Orange",
+//                                                                                 "Yellow",
+//                                                                                 "Blue",
+//                                                                                 "Green",
+//                                                                                 "Purple",
+//                                                                                 "Other, Please Specify");
+//    ObservableList<String> eyeColorList = FXCollections.observableArrayList("Select Character's Eye Color",
+//                                                                                "Amber",
+//                                                                                "Blue",
+//                                                                                "Brown",
+//                                                                                "Grey",
+//                                                                                "Green",
+//                                                                                "Hazel",
+//                                                                                "Red",
+//                                                                                "Black",
+//                                                                                "Purple",
+//                                                                                "Other, Please Specify");
+//    ObservableList<String> locationTypeList = FXCollections.observableArrayList("Select Location Type",
+//                                                                                "Room",
+//                                                                                "Building",
+//                                                                                "Park",
+//                                                                                "Street",
+//                                                                                "Neighborhood",
+//                                                                                "Village",
+//                                                                                "Town",
+//                                                                                "City",
+//                                                                                "County",
+//                                                                                "State",
+//                                                                                "Province",
+//                                                                                "Territory",
+//                                                                                "Country",
+//                                                                                "Island",
+//                                                                                "Continent",
+//                                                                                "Moon",
+//                                                                                "Planet",
+//                                                                                "Solar System",
+//                                                                                "Galaxy",
+//                                                                                "Universe",
+//                                                                                "Other, Please Specify");
+//
+//    ObservableList<BKCharacter> bkCharacterList = FXCollections.observableArrayList();
+//    ObservableList<BKEvent> bkEventList = FXCollections.observableArrayList();
+//    ObservableList<BKLocation> bkLocationList = FXCollections.observableArrayList();
 
 
     @FXML
@@ -140,10 +149,8 @@ public class HelloController
     //CHARACTER CREATION DATA
     @FXML
     private TextField characterNameField;
-
     @FXML
     private TextArea characterDescriptionArea;
-
     @FXML
     private TextField characterAgeField;
 
@@ -188,7 +195,7 @@ public class HelloController
     private TextField eventEndDateField;
 
 
-//    //LOCATION CREATION DATA
+    //LOCATION CREATION DATA
     @FXML
     private TextField locationNameField;
     @FXML
@@ -197,8 +204,16 @@ public class HelloController
     private ChoiceBox locationTypeChoiceBox;
     @FXML
     private TextField locationTypeField;
+
+    //SAVE DATABASES FEATURE
     @FXML
     private Button saveDataBasesButton;
+    @FXML
+    private Label savedMessage1;
+    @FXML
+    private Label savedMessage2;
+    @FXML
+    private Label savedMessage3;
 
 
 
@@ -211,9 +226,34 @@ public class HelloController
     private TextField locationSearchField;
 
 
+
+    /*********************************************************************************************
+     *                                       * FUNCTIONS *                                       *
+     *********************************************************************************************/
+
+
+
+
+
+
     @FXML
     private void initialize()
     {
+        //Initializing observable lists
+        genderList = readObservableListFromFile(FileSystems.getDefault().getPath("Genders.bin"));
+        sexualitiesList = readObservableListFromFile(FileSystems.getDefault().getPath("Sexualities.bin"));
+        raceSpeciesList = readObservableListFromFile(FileSystems.getDefault().getPath("Species.bin"));
+        raceSkinColorList = readObservableListFromFile(FileSystems.getDefault().getPath("SkinColor.bin"));
+        hairColorList = readObservableListFromFile(FileSystems.getDefault().getPath("HairColor.bin"));
+        eyeColorList = readObservableListFromFile(FileSystems.getDefault().getPath("EyeColor.bin"));
+        locationTypeList = readObservableListFromFile(FileSystems.getDefault().getPath("LocationTypes.bin"));
+        //bkTypes
+        bkCharacterList = readObservableListFromFile(FileSystems.getDefault().getPath("BKCharacters.bin"));
+        bkEventList = readObservableListFromFile(FileSystems.getDefault().getPath("BKEvents.bin"));
+        bkLocationList = readObservableListFromFile(FileSystems.getDefault().getPath("BKLocations.bin"));
+
+
+
         //CHARACTER
         genderChoiceBox.setValue("Select Character's Gender");
         genderChoiceBox.setItems(genderList);
@@ -261,10 +301,8 @@ public class HelloController
 
     private void getGender(Event event)
     {
-        Object newGender = genderChoiceBox.getValue();
-
         //showing text box if new item needs to be added
-        if(newGender == "Other, Please Specify")
+        if(genderChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             genderField.setVisible(true);
         }
@@ -277,10 +315,8 @@ public class HelloController
     }
     private void getSexuality(Event event)
     {
-        Object newSexuality = sexualityChoiceBox.getValue();
-
         //showing text box if new item needs to be added
-        if(newSexuality == "Other, Please Specify")
+        if(sexualityChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             sexualityField.setVisible(true);
         }
@@ -293,10 +329,10 @@ public class HelloController
     }
     private void getRaceSpecies(Event event)
     {
-        Object newSpecies = raceSpeciesChoiceBox.getValue();
+//        Object newSpecies = raceSpeciesChoiceBox.getValue();
 
         //showing text box if new item needs to be added
-        if(newSpecies == "Other, Please Specify")
+        if(raceSpeciesChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             raceSpeciesField.setVisible(true);
         }
@@ -309,10 +345,10 @@ public class HelloController
     }
     private void getRaceSkinColor(Event event)
     {
-        Object newSkinColor = raceSkinColorChoiceBox.getValue();
+//        Object newSkinColor = raceSkinColorChoiceBox.getValue();
 
         //showing text box if new item needs to be added
-        if(newSkinColor == "Other, Please Specify")
+        if(raceSkinColorChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             raceSkinColorField.setVisible(true);
         }
@@ -325,10 +361,10 @@ public class HelloController
     }
     private void getHairColor(Event event)
     {
-        Object newHairColor = hairColorChoiceBox.getValue();
+//        Object newHairColor = hairColorChoiceBox.getValue();
 
         //showing text box if new item needs to be added
-        if(newHairColor == "Other, Please Specify")
+        if(hairColorChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             hairColorField.setVisible(true);
         }
@@ -341,10 +377,10 @@ public class HelloController
     }
     private void getEyeColor(Event event)
     {
-        Object newEyeColor = eyeColorChoiceBox.getValue();
+//        Object newEyeColor = eyeColorChoiceBox.getValue();
 
         //showing text box if new item needs to be added
-        if(newEyeColor == "Other, Please Specify")
+        if(eyeColorChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             eyeColorField.setVisible(true);
         }
@@ -359,10 +395,10 @@ public class HelloController
     //LOCATION
     private void getLocationType(Event event)
     {
-        Object newLocationType = locationTypeChoiceBox.getValue();
+//        Object newLocationType = locationTypeChoiceBox.getValue();
 
         //showing text box if new item needs to be added
-        if(newLocationType == "Other, Please Specify")
+        if(locationTypeChoiceBox.getValue().toString().equalsIgnoreCase("Other, Please Specify"))
         {
             locationTypeField.setVisible(true);
         }
@@ -383,85 +419,85 @@ public class HelloController
         String newDescription = characterDescriptionArea.getText();
         String newAge = characterAgeField.getText();
 
-        String newGender = String.valueOf(genderChoiceBox.getValue());
-        if(newGender == "Other, Please Specify")
+        String newGender = String.valueOf(genderChoiceBox.getValue().toString());
+        if(newGender.equalsIgnoreCase("Other, Please Specify"))
         {
             newGender = genderField.getText();
 
             //Adding new gender to the list
             genderList.add((genderList.size() - 1), newGender);
         }
-        else if (newGender == "Select Character's Gender")
+        else if (newGender.equalsIgnoreCase("Select Character's Gender"))
         {
             newGender = "";
         }
 
-        String newSexuality = String.valueOf(sexualityChoiceBox.getValue());
-        if(newSexuality == "Other, Please Specify")
+        String newSexuality = String.valueOf(sexualityChoiceBox.getValue().toString());
+        if(newSexuality.equalsIgnoreCase("Other, Please Specify"))
         {
             newSexuality = sexualityField.getText();
 
             //Adding new sexuality to the list
             sexualitiesList.add((sexualitiesList.size() - 1), newSexuality);
         }
-        else if (newSexuality == "Select Character's Sexuality")
+        else if (newSexuality.equalsIgnoreCase("Select Character's Sexuality"))
         {
             newSexuality = "";
         }
 
-        String newSpecies = String.valueOf(raceSpeciesChoiceBox.getValue());
-        if(newSpecies == "Other, Please Specify")
+        String newSpecies = String.valueOf(raceSpeciesChoiceBox.getValue().toString());
+        if(newSpecies.equalsIgnoreCase("Other, Please Specify"))
         {
             newSpecies = raceSpeciesField.getText();
 
             //Adding new species to the list
             raceSpeciesList.add((raceSpeciesList.size() - 1), newSpecies);
         }
-        else if (newSpecies == "Select Character's Species")
+        else if (newSpecies.equalsIgnoreCase("Select Character's Species"))
         {
             newSpecies = "";
         }
 
-        String newSkinColor = String.valueOf(raceSkinColorChoiceBox.getValue());
-        if(newSkinColor == "Other, Please Specify")
+        String newSkinColor = String.valueOf(raceSkinColorChoiceBox.getValue().toString());
+        if(newSkinColor.equalsIgnoreCase("Other, Please Specify"))
         {
             newSkinColor = raceSkinColorField.getText();
 
             //Adding new skin color to the list
             raceSkinColorList.add((raceSkinColorList.size() - 1), newSkinColor);
         }
-        else if (newSkinColor == "Select Character's Skin Color")
+        else if (newSkinColor.equalsIgnoreCase("Select Character's Skin Color"))
         {
             newSkinColor = "";
         }
 
-        String newHairColor = String.valueOf(hairColorChoiceBox.getValue());
-        if(newHairColor == "Other, Please Specify")
+        String newHairColor = String.valueOf(hairColorChoiceBox.getValue().toString());
+        if(newHairColor.equalsIgnoreCase("Other, Please Specify"))
         {
             newHairColor = hairColorField.getText();
 
             //Adding new skin color to the list
             hairColorList.add((hairColorList.size() - 1), newHairColor);
         }
-        else if (newHairColor == "Select Character's Hair Color")
+        else if (newHairColor.equalsIgnoreCase("Select Character's Hair Color"))
         {
             newHairColor = "";
         }
 
-        String newEyeColor = String.valueOf(eyeColorChoiceBox.getValue());
-        if(newEyeColor == "Other, Please Specify")
+        String newEyeColor = String.valueOf(eyeColorChoiceBox.getValue().toString());
+        if(newEyeColor.equalsIgnoreCase("Other, Please Specify"))
         {
             newEyeColor = eyeColorField.getText();
 
             //Adding new skin color to the list
             eyeColorList.add((eyeColorList.size() - 1), newEyeColor);
         }
-        else if (newEyeColor == "Select Character's Eye Color")
+        else if (newEyeColor.equalsIgnoreCase("Select Character's Eye Color"))
         {
             newEyeColor = "";
         }
 
-        characterCreationText.setText("Saving " + newName+ " to Data Base");
+        characterCreationText.setText("Saving " + newName + " to Data Base");
 
 
         //Add to array
@@ -537,15 +573,15 @@ public class HelloController
         String newName = locationNameField.getText();
         String newDescription = locationDescriptionArea.getText();
 
-        String newLocationType = String.valueOf(locationTypeChoiceBox.getValue());
-        if(newLocationType == "Other, Please Specify")
+        String newLocationType = String.valueOf(locationTypeChoiceBox.getValue().toString());
+        if(newLocationType.equalsIgnoreCase("Other, Please Specify"))
         {
             newLocationType = locationTypeField.getText();
 
             //Adding new location type to the list
             locationTypeList.add((locationTypeList.size() - 1), newLocationType);
         }
-        else if (newLocationType == "Select Location Type")
+        else if (newLocationType.equalsIgnoreCase("Select Location Type"))
         {
             newLocationType = "";
         }
@@ -680,12 +716,37 @@ public class HelloController
         writeObservableListToFile(bkCharacterList, "BKCharacters.bin");
         writeObservableListToFile(bkEventList, "BKEvents.bin");
         writeObservableListToFile(bkLocationList, "BKLocations.bin");
+
+        savedMessage1.setText("All databases have been saved");
+        savedMessage2.setText("All databases have been saved");
+        savedMessage3.setText("All databases have been saved");
     }
 
 
-    public static void writeObservableListToFile(ObservableList listToWrite, String fileName) throws IOException {
+    public static void writeObservableListToFile(ObservableList listToWrite, String fileName) throws IOException
+    {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
         out.writeObject(new ArrayList<String>(listToWrite));
         out.close();
+    }
+
+    private static ObservableList readObservableListFromFile(Path fileName)
+    {
+        try
+        {
+            InputStream in = Files.newInputStream(fileName);
+            ObjectInputStream ois = new ObjectInputStream(in);
+            List list = (List) ois.readObject() ;
+
+            return FXCollections.observableList(list);
+        } catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return FXCollections.emptyObservableList();
     }
 }

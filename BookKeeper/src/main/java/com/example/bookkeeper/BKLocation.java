@@ -1,6 +1,8 @@
 package com.example.bookkeeper;
 
-public class BKLocation  {
+import java.io.Serializable;
+
+public class BKLocation implements Serializable {
     private String locationName;
     private String locationDescription;
     private String locationType;
