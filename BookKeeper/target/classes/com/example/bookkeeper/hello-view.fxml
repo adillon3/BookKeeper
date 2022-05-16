@@ -11,13 +11,13 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="907.0" spacing="20.0" style="-fx-background-color: #f2556a;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Search">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Search">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="characterSearchField" alignment="TOP_LEFT" promptText="Search Character Name" />
@@ -34,17 +34,17 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0" style="-fx-background-color: #f2556a;">
                       <padding>
                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                       </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Character Creation">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="characterNameField" alignment="TOP_LEFT" promptText="Character Name" />
-                     <TextArea fx:id ="characterDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
+                     <TextArea fx:id="characterDescriptionArea" prefHeight="19.0" prefWidth="802.0" promptText="Character Description" />
                      <TextField fx:id="characterAgeField" promptText="Character's Age" />
                      <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="400.0" />
                      <TextField fx:id="genderField" promptText="Character's Gender" />
@@ -72,13 +72,13 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0" style="-fx-background-color: #6881f2;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Search">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Search">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="eventSearchField" alignment="TOP_LEFT" promptText="Search Event" />
@@ -95,13 +95,13 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0" style="-fx-background-color: #6881f2;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Search">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Search">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="eventNameField" alignment="TOP_LEFT" promptText="Event Name" />
@@ -122,13 +122,13 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0" style="-fx-background-color: #4a943b;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location Creation">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Location Creation">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="locationSearchField" alignment="TOP_LEFT" promptText="Search Location" />
@@ -145,13 +145,13 @@
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="895.0" spacing="20.0" style="-fx-background-color: #4a943b;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location Search">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Location Search">
                         <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
+                           <Font name="Berlin Sans FB" size="40.0" />
                         </font>
                      </Text>
                      <TextField fx:id="locationNameField" alignment="TOP_LEFT" promptText="Location Name" />
