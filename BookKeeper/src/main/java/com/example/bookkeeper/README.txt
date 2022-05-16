@@ -14,7 +14,10 @@ create.
 =========================================================
 5-16 NOTES
 =========================================================
-Colors:  Character Red: #f2556a, Event Blue #6881f2, Location Green  #4a943b
+Characters, Events, and Locations can now all be written to the database and can be looked up in a matching tabs.
+All information is serialized to respective files and can be access in separate iterations of the program.  Each
+pair of tabs was also colored to help them stand apart and tell users which page(s) they are on.  These colors are:
+Character Red: #f2556a, Event Blue #6881f2, Location Green  #4a943b.
 
 
 
