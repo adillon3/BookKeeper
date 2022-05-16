@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<TabPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
+<TabPane scaleShape="false" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookkeeper.HelloController">
    <tabs>
-      <Tab closable="false" text="Character Search">
+      <Tab closable="false" style="-fx-background-color: #f2556a; -fx-text-base-color: white;" text="Character Search">
          <content>
-            <ScrollPane prefHeight="910.0" prefWidth="907.0">
+            <ScrollPane>
                <content>
-                  <VBox alignment="CENTER" prefHeight="846.0" prefWidth="907.0" spacing="20.0" style="-fx-background-color: #f2556a;">
+                  <VBox alignment="CENTER" focusTraversable="true" prefHeight="846.0" prefWidth="907.0" spacing="20.0" style="-fx-background-color: #f2556a;">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
@@ -30,7 +30,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Character Creation">
+      <Tab closable="false" style="-fx-background-color: #f2556a; -fx-text-base-color: White;" text="Character Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -68,7 +68,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Event Search">
+      <Tab closable="false" style="-fx-background-color: #6881f2; -fx-text-base-color: White;" text="Event Search">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -91,7 +91,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Event Creation">
+      <Tab closable="false" style="-fx-background-color: #6881f2; -fx-text-base-color: White;" text="Event Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -118,7 +118,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Location Search">
+      <Tab closable="false" style="-fx-background-color: #4a943b; -fx-text-base-color: White;" text="Location Search">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>
@@ -141,7 +141,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab closable="false" text="Location Creation">
+      <Tab closable="false" style="-fx-background-color: #4a943b; -fx-text-base-color: White;" text="Location Creation">
          <content>
             <ScrollPane prefHeight="910.0" prefWidth="907.0">
                <content>

@@ -19,7 +19,7 @@ import java.util.List;
 //import java.sql.DriverManager;
 
 
-public class HelloController
+public class HelloController<JFXTabPane>
 {
 //    Connection connection = DriverManager.getConnection();
 
@@ -226,16 +226,9 @@ public class HelloController
     private TextField locationSearchField;
 
 
-
     /*********************************************************************************************
      *                                       * FUNCTIONS *                                       *
      *********************************************************************************************/
-
-
-
-
-
-
     @FXML
     private void initialize()
     {
