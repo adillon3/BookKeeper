@@ -21,10 +21,13 @@
                         </font>
                      </Text>
                      <TextField fx:id="characterSearchField" alignment="TOP_LEFT" promptText="Search Character Name" />
-
+                     
                      <Button onAction="#onCharacterSearchButtonClick" text="Search for Character" />
                      <Label fx:id="characterSearchText" />
+
                      <Label fx:id="characterFoundOutputText" />
+
+                     <Button fx:id="deleteCharacterButton" mnemonicParsing="false" onAction="#onCharacterDeleteButtonClick" text="Delete Character" textAlignment="CENTER" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -86,6 +89,7 @@
                      <Button onAction="#onEventSearchButtonClick" text="Search for Event" />
                      <Label fx:id="eventSearchText" />
                      <Label fx:id="eventFoundOutputText" />
+                     <Button fx:id="deleteEventButton" mnemonicParsing="false" onAction="#onEventDeleteButtonClick" text="Delete Event" textAlignment="CENTER" />
                   </VBox>
                </content>
             </ScrollPane>
@@ -136,6 +140,7 @@
                      <Button onAction="#onLocationSearchButtonClick" text="Search For Location" />
                      <Label fx:id="locationSearchText" />
                      <Label fx:id="locationFoundOutputText" />
+                     <Button fx:id="deleteLocationButton" mnemonicParsing="false" onAction="#onLocationDeleteButtonClick" text="Delete Location" textAlignment="CENTER" />
                   </VBox>
                </content>
             </ScrollPane>

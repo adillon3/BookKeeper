@@ -225,6 +225,18 @@ public class HelloController<JFXTabPane>
     @FXML
     private TextField locationSearchField;
 
+    //DELETE VARIABLES
+    @FXML
+    private Button deleteCharacterButton;
+    @FXML
+    private Button deleteEventButton;
+    @FXML
+    private Button deleteLocationButton;
+
+
+    int characterFoundIndex = 0;
+    int eventFoundIndex = 0;
+    int locationFoundIndex = 0;
 
     /*********************************************************************************************
      *                                       * FUNCTIONS *                                       *
@@ -290,6 +302,11 @@ public class HelloController<JFXTabPane>
         //EVENT -N/A
         //LOCATION
         locationTypeField.setVisible(false);
+
+        //Delete buttons
+        deleteCharacterButton.setVisible(false);
+        deleteEventButton.setVisible(false);
+        deleteLocationButton.setVisible(false);
     }
 
     private void getGender(Event event)
@@ -620,6 +637,8 @@ public class HelloController<JFXTabPane>
             {
                 characterSearchText.setText(searchCharacterName + " found!");
                 characterFoundOutputText.setText(bkCharacterList.get(index).toString());
+                deleteCharacterButton.setVisible(true);
+                characterFoundIndex = index;
                 return;
             }
             index++;
@@ -628,7 +647,17 @@ public class HelloController<JFXTabPane>
         //CHARACTER NOT FOUND
         characterSearchText.setText(searchCharacterName + " not found!");
         characterFoundOutputText.setText("");
+        deleteCharacterButton.setVisible(false);
     }
+    @FXML
+    protected void onCharacterDeleteButtonClick()
+    {
+        bkCharacterList.remove(characterFoundIndex);
+        characterSearchText.setText("Deleting " + characterSearchField.getText());
+        characterFoundOutputText.setText("");
+        characterSearchField.clear();
+    }
+
     @FXML
     protected void onEventSearchButtonClick()
     {
@@ -649,6 +678,8 @@ public class HelloController<JFXTabPane>
             {
                 eventSearchText.setText(searchEventName + " found!");
                 eventFoundOutputText.setText(bkEventList.get(index).toString());
+                deleteEventButton.setVisible(true);
+                eventFoundIndex = index;
                 return;
             }
             index++;
@@ -657,7 +688,17 @@ public class HelloController<JFXTabPane>
         //EVENT NOT FOUND
         eventSearchText.setText(searchEventName + " not found!");
         eventFoundOutputText.setText("");
+        deleteEventButton.setVisible(false);
     }
+    @FXML
+    protected void onEventDeleteButtonClick()
+    {
+        bkEventList.remove(eventFoundIndex);
+        eventSearchText.setText("Deleting " + eventSearchField.getText());
+        eventFoundOutputText.setText("");
+        eventSearchField.clear();
+    }
+
     @FXML
     protected void onLocationSearchButtonClick()
     {
@@ -678,6 +719,8 @@ public class HelloController<JFXTabPane>
             {
                 locationSearchText.setText(searchLocationName + " found!");
                 locationFoundOutputText.setText(bkLocationList.get(index).toString());
+                deleteLocationButton.setVisible(true);
+                locationFoundIndex = index;
                 return;
             }
             index++;
@@ -686,6 +729,15 @@ public class HelloController<JFXTabPane>
         //CHARACTER NOT FOUND
         locationSearchText.setText(searchLocationName + " not found!");
         locationFoundOutputText.setText("");
+        deleteLocationButton.setVisible(false);
+    }
+    @FXML
+    protected void onLocationDeleteButtonClick()
+    {
+        bkLocationList.remove(locationFoundIndex);
+        locationSearchText.setText("Deleting " + locationSearchField.getText());
+        locationFoundOutputText.setText("");
+        locationSearchField.clear();
     }
 
 
